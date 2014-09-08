@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B4AFAAC619BE5DDA00CCC368 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AFAAC519BE5DDA00CCC368 /* Foundation.framework */; };
+		B4AFAAC819BE5DDA00CCC368 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AFAAC719BE5DDA00CCC368 /* CoreGraphics.framework */; };
+		B4AFAACA19BE5DDA00CCC368 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AFAAC919BE5DDA00CCC368 /* UIKit.framework */; };
+		B4AFAAD019BE5DDA00CCC368 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B4AFAACE19BE5DDA00CCC368 /* InfoPlist.strings */; };
+		B4AFAAD219BE5DDA00CCC368 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AFAAD119BE5DDA00CCC368 /* main.m */; };
+		B4AFAAD619BE5DDA00CCC368 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AFAAD519BE5DDA00CCC368 /* AppDelegate.m */; };
+		B4AFAAD919BE5DDA00CCC368 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4AFAAD719BE5DDA00CCC368 /* Main.storyboard */; };
+		B4AFAADC19BE5DDA00CCC368 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AFAADB19BE5DDA00CCC368 /* ViewController.m */; };
+		B4AFAADE19BE5DDA00CCC368 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4AFAADD19BE5DDA00CCC368 /* Images.xcassets */; };
+		B4AFAAE519BE5DDA00CCC368 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AFAAE419BE5DDA00CCC368 /* XCTest.framework */; };
+		B4AFAAE619BE5DDA00CCC368 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AFAAC519BE5DDA00CCC368 /* Foundation.framework */; };
+		B4AFAAE719BE5DDA00CCC368 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AFAAC919BE5DDA00CCC368 /* UIKit.framework */; };
+		B4AFAAEF19BE5DDA00CCC368 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B4AFAAED19BE5DDA00CCC368 /* InfoPlist.strings */; };
+		B4AFAAF119BE5DDA00CCC368 /* FloridaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AFAAF019BE5DDA00CCC368 /* FloridaTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B4AFAAE819BE5DDA00CCC368 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4AFAABA19BE5DDA00CCC368 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4AFAAC119BE5DDA00CCC368;
+			remoteInfo = Florida;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B4AFAAC219BE5DDA00CCC368 /* Florida.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Florida.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4AFAAC519BE5DDA00CCC368 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B4AFAAC719BE5DDA00CCC368 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B4AFAAC919BE5DDA00CCC368 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B4AFAACD19BE5DDA00CCC368 /* Florida-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Florida-Info.plist"; sourceTree = "<group>"; };
+		B4AFAACF19BE5DDA00CCC368 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B4AFAAD119BE5DDA00CCC368 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B4AFAAD319BE5DDA00CCC368 /* Florida-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Florida-Prefix.pch"; sourceTree = "<group>"; };
+		B4AFAAD419BE5DDA00CCC368 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B4AFAAD519BE5DDA00CCC368 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B4AFAAD819BE5DDA00CCC368 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B4AFAADA19BE5DDA00CCC368 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B4AFAADB19BE5DDA00CCC368 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B4AFAADD19BE5DDA00CCC368 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B4AFAAE319BE5DDA00CCC368 /* FloridaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FloridaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4AFAAE419BE5DDA00CCC368 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		B4AFAAEC19BE5DDA00CCC368 /* FloridaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FloridaTests-Info.plist"; sourceTree = "<group>"; };
+		B4AFAAEE19BE5DDA00CCC368 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B4AFAAF019BE5DDA00CCC368 /* FloridaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FloridaTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B4AFAABF19BE5DDA00CCC368 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4AFAAC819BE5DDA00CCC368 /* CoreGraphics.framework in Frameworks */,
+				B4AFAACA19BE5DDA00CCC368 /* UIKit.framework in Frameworks */,
+				B4AFAAC619BE5DDA00CCC368 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4AFAAE019BE5DDA00CCC368 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4AFAAE519BE5DDA00CCC368 /* XCTest.framework in Frameworks */,
+				B4AFAAE719BE5DDA00CCC368 /* UIKit.framework in Frameworks */,
+				B4AFAAE619BE5DDA00CCC368 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B4AFAAB919BE5DDA00CCC368 = {
+			isa = PBXGroup;
+			children = (
+				B4AFAACB19BE5DDA00CCC368 /* Florida */,
+				B4AFAAEA19BE5DDA00CCC368 /* FloridaTests */,
+				B4AFAAC419BE5DDA00CCC368 /* Frameworks */,
+				B4AFAAC319BE5DDA00CCC368 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B4AFAAC319BE5DDA00CCC368 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4AFAAC219BE5DDA00CCC368 /* Florida.app */,
+				B4AFAAE319BE5DDA00CCC368 /* FloridaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B4AFAAC419BE5DDA00CCC368 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B4AFAAC519BE5DDA00CCC368 /* Foundation.framework */,
+				B4AFAAC719BE5DDA00CCC368 /* CoreGraphics.framework */,
+				B4AFAAC919BE5DDA00CCC368 /* UIKit.framework */,
+				B4AFAAE419BE5DDA00CCC368 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B4AFAACB19BE5DDA00CCC368 /* Florida */ = {
+			isa = PBXGroup;
+			children = (
+				B4AFAAD419BE5DDA00CCC368 /* AppDelegate.h */,
+				B4AFAAD519BE5DDA00CCC368 /* AppDelegate.m */,
+				B4AFAAD719BE5DDA00CCC368 /* Main.storyboard */,
+				B4AFAADA19BE5DDA00CCC368 /* ViewController.h */,
+				B4AFAADB19BE5DDA00CCC368 /* ViewController.m */,
+				B4AFAADD19BE5DDA00CCC368 /* Images.xcassets */,
+				B4AFAACC19BE5DDA00CCC368 /* Supporting Files */,
+			);
+			path = Florida;
+			sourceTree = "<group>";
+		};
+		B4AFAACC19BE5DDA00CCC368 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B4AFAACD19BE5DDA00CCC368 /* Florida-Info.plist */,
+				B4AFAACE19BE5DDA00CCC368 /* InfoPlist.strings */,
+				B4AFAAD119BE5DDA00CCC368 /* main.m */,
+				B4AFAAD319BE5DDA00CCC368 /* Florida-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B4AFAAEA19BE5DDA00CCC368 /* FloridaTests */ = {
+			isa = PBXGroup;
+			children = (
+				B4AFAAF019BE5DDA00CCC368 /* FloridaTests.m */,
+				B4AFAAEB19BE5DDA00CCC368 /* Supporting Files */,
+			);
+			path = FloridaTests;
+			sourceTree = "<group>";
+		};
+		B4AFAAEB19BE5DDA00CCC368 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B4AFAAEC19BE5DDA00CCC368 /* FloridaTests-Info.plist */,
+				B4AFAAED19BE5DDA00CCC368 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B4AFAAC119BE5DDA00CCC368 /* Florida */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4AFAAF419BE5DDA00CCC368 /* Build configuration list for PBXNativeTarget "Florida" */;
+			buildPhases = (
+				B4AFAABE19BE5DDA00CCC368 /* Sources */,
+				B4AFAABF19BE5DDA00CCC368 /* Frameworks */,
+				B4AFAAC019BE5DDA00CCC368 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Florida;
+			productName = Florida;
+			productReference = B4AFAAC219BE5DDA00CCC368 /* Florida.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B4AFAAE219BE5DDA00CCC368 /* FloridaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4AFAAF719BE5DDA00CCC368 /* Build configuration list for PBXNativeTarget "FloridaTests" */;
+			buildPhases = (
+				B4AFAADF19BE5DDA00CCC368 /* Sources */,
+				B4AFAAE019BE5DDA00CCC368 /* Frameworks */,
+				B4AFAAE119BE5DDA00CCC368 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B4AFAAE919BE5DDA00CCC368 /* PBXTargetDependency */,
+			);
+			name = FloridaTests;
+			productName = FloridaTests;
+			productReference = B4AFAAE319BE5DDA00CCC368 /* FloridaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B4AFAABA19BE5DDA00CCC368 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = kodebinario;
+				TargetAttributes = {
+					B4AFAAE219BE5DDA00CCC368 = {
+						TestTargetID = B4AFAAC119BE5DDA00CCC368;
+					};
+				};
+			};
+			buildConfigurationList = B4AFAABD19BE5DDA00CCC368 /* Build configuration list for PBXProject "Florida" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B4AFAAB919BE5DDA00CCC368;
+			productRefGroup = B4AFAAC319BE5DDA00CCC368 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B4AFAAC119BE5DDA00CCC368 /* Florida */,
+				B4AFAAE219BE5DDA00CCC368 /* FloridaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B4AFAAC019BE5DDA00CCC368 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4AFAADE19BE5DDA00CCC368 /* Images.xcassets in Resources */,
+				B4AFAAD019BE5DDA00CCC368 /* InfoPlist.strings in Resources */,
+				B4AFAAD919BE5DDA00CCC368 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4AFAAE119BE5DDA00CCC368 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4AFAAEF19BE5DDA00CCC368 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B4AFAABE19BE5DDA00CCC368 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4AFAADC19BE5DDA00CCC368 /* ViewController.m in Sources */,
+				B4AFAAD619BE5DDA00CCC368 /* AppDelegate.m in Sources */,
+				B4AFAAD219BE5DDA00CCC368 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4AFAADF19BE5DDA00CCC368 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4AFAAF119BE5DDA00CCC368 /* FloridaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B4AFAAE919BE5DDA00CCC368 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4AFAAC119BE5DDA00CCC368 /* Florida */;
+			targetProxy = B4AFAAE819BE5DDA00CCC368 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B4AFAACE19BE5DDA00CCC368 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B4AFAACF19BE5DDA00CCC368 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B4AFAAD719BE5DDA00CCC368 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B4AFAAD819BE5DDA00CCC368 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B4AFAAED19BE5DDA00CCC368 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B4AFAAEE19BE5DDA00CCC368 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B4AFAAF219BE5DDA00CCC368 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B4AFAAF319BE5DDA00CCC368 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B4AFAAF519BE5DDA00CCC368 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Florida/Florida-Prefix.pch";
+				INFOPLIST_FILE = "Florida/Florida-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B4AFAAF619BE5DDA00CCC368 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Florida/Florida-Prefix.pch";
+				INFOPLIST_FILE = "Florida/Florida-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		B4AFAAF819BE5DDA00CCC368 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Florida.app/Florida";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Florida/Florida-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "FloridaTests/FloridaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		B4AFAAF919BE5DDA00CCC368 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Florida.app/Florida";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Florida/Florida-Prefix.pch";
+				INFOPLIST_FILE = "FloridaTests/FloridaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B4AFAABD19BE5DDA00CCC368 /* Build configuration list for PBXProject "Florida" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4AFAAF219BE5DDA00CCC368 /* Debug */,
+				B4AFAAF319BE5DDA00CCC368 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B4AFAAF419BE5DDA00CCC368 /* Build configuration list for PBXNativeTarget "Florida" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4AFAAF519BE5DDA00CCC368 /* Debug */,
+				B4AFAAF619BE5DDA00CCC368 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B4AFAAF719BE5DDA00CCC368 /* Build configuration list for PBXNativeTarget "FloridaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4AFAAF819BE5DDA00CCC368 /* Debug */,
+				B4AFAAF919BE5DDA00CCC368 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B4AFAABA19BE5DDA00CCC368 /* Project object */;
+}
