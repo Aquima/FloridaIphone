@@ -7,11 +7,13 @@
 //
 
 #import "AppDelegate.h"
-
+#import "kbStoreDataModel.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [kbStoreDataModel sharedInstance];
+    [[OriginData sharedInstance] stateOfConection];
     // Override point for customization after application launch.
     return YES;
 }

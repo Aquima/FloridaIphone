@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CategoryCD" representedClassName="CategoryCD" syncable="YES">
+        <attribute name="idCategory" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nameCategory" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="RecipeCD" representedClassName="RecipeCD" syncable="YES">
+        <attribute name="hasVideo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idCategory" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idRecipe" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isFavorite" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="nameCategory" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="portions" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ranking" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="urlImage" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CategoryCD" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="RecipeCD" positionX="-54" positionY="9" width="128" height="195"/>
+    </elements>
+</model>
