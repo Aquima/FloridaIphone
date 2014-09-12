@@ -33,7 +33,7 @@
 }
 -(void)loadWithRecipe:(RecipeCD*)recipeCD{
     recipe=recipeCD;
-    [lblTitle setText:recipeCD.nameCategory];
+    [lblTitle setText:recipeCD.title];
     [imgRecipe sd_setImageWithURL:[NSURL URLWithString:recipeCD.urlImage] placeholderImage:[UIImage imageNamed:@"PlaceHolder"]];
 }
 @end

@@ -46,15 +46,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     //    UIAlertView*alert=[[UIAlertView alloc] initWithTitle:@"title" message:@"mesage" delegate:self cancelButtonTitle:@"Aceptar" otherButtonTitles: nil];
     //    [alert show];
-    if (section==0) {
-        return [[data objectAtIndex:0] count]+2;
-    }else if (section==1){
-        return 1;
-    }else if (section==2){
-        return [[data objectAtIndex:1] count]+2;
-    }else{
-        return 1;
-    }
+    return [data count];
     
 }
 
@@ -62,20 +54,21 @@
 // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *identifier = @"itemReportSection";
+    static NSString *identifier = @"recipeCell";
     RecipesTableViewCell*cell=[tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
         cell = [[RecipesTableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier:identifier];
     }
-  
+    
+    [cell loadWithRecipe:(RecipeCD*)[data objectAtIndex:indexPath.row]];
     return cell;
 }
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 4;
+    return 1;
 }// Default is 1 if not implemented
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 110;

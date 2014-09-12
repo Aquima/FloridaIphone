@@ -34,10 +34,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endRecipes:) name:@"endRecipes" object:nil];
-    [[OriginData sharedInstance] invokeAsyncSyncRecipes:@"endRecipes"];
+    [self performSelector:@selector(consult) withObject:nil afterDelay:1.5];
+    
    
     // Do any additional setup after loading the view.
+}
+-(void)consult{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endRecipes:) name:@"endRecipes" object:nil];
+    [[OriginData sharedInstance] invokeAsyncSyncRecipes:@"endRecipes"];
 }
 -(void)endRecipes:(NSNotification*)notification{
     NSDictionary*dataRecipes=(NSDictionary*)notification.object;
@@ -69,9 +73,9 @@
      NSArray *results = [[recipesCDList filteredArrayUsingPredicate:predicate]
      sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];
     RecipesViewController*viewController =
-    [[UIStoryboard storyboardWithName:@"Main_iPhone"
+    [[UIStoryboard storyboardWithName:@"Main"
                                bundle:NULL] instantiateViewControllerWithIdentifier:@"recipesVC"];
-    [viewCategories setRecipesList]
+    [viewController setRecipeList:results];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 /*

@@ -11,8 +11,7 @@
 @interface RecipesTableViewCell : UITableViewCell{
     __weak IBOutlet UIImageView*imgRecipe;
     __weak IBOutlet UILabel*lblTitle;
-    __strong IBOutletCollection(UIButton) NSArray*btnRenking;
-    __weak RecipeCD*recipe;
+    __strong IBOutletCollection(UIButton) NSArray*btnRanking;
 }
 @property(nonatomic,strong) RecipeCD*recipe;
 -(void)loadWithRecipe:(RecipeCD*)recipe;

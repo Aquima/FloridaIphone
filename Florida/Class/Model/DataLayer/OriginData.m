@@ -54,16 +54,17 @@
 -(void)invokeAsyncSyncRecipes:(NSString*)nameNotification  {
     NSUserDefaults*infoUser=[NSUserDefaults standardUserDefaults];
     if ([infoUser objectForKey:@"syncComplete"]==nil) {
-        if (self.isAvailableConnection) {
-            //call web service
-            [WSQuery getRecipes:nameNotification withSession:defaultSession];
-            /*[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endGetRecipes:) name:@"endRecipes" object:nil];*/
-            // [WSRegister getLogin:nameNotification withUserData:userData];
-        }else{
-            //call data on my device or show alert error of conection
-            UIAlertView*showStatus = [[UIAlertView alloc] initWithTitle:@"Internet" message:@"No hay conexion a internet" delegate:nil cancelButtonTitle:@"Aceptar" otherButtonTitles: nil];
-            [showStatus show];
-        }
+         [WSQuery getRecipes:nameNotification withSession:defaultSession];
+//        if (self.isAvailableConnection) {
+//            //call web service
+//            [WSQuery getRecipes:nameNotification withSession:defaultSession];
+//            /*[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endGetRecipes:) name:@"endRecipes" object:nil];*/
+//            // [WSRegister getLogin:nameNotification withUserData:userData];
+//        }else{
+//            //call data on my device or show alert error of conection
+//            UIAlertView*showStatus = [[UIAlertView alloc] initWithTitle:@"Internet" message:@"No hay conexion a internet" delegate:nil cancelButtonTitle:@"Aceptar" otherButtonTitles: nil];
+//            [showStatus show];
+//        }
     }else{
         NSArray*categoryList = [LocalData listElements:@"CategoryCD"];
         NSArray*recipesList = [LocalData listElements:@"RecipeCD"];
@@ -72,5 +73,9 @@
     }
    
 }
+-(void)invokeAsyncSyncDetailRecipe:(NSString*)nameNotification withIdRecipe:(NSString*)idRecipe{
+    [WSQuery getDeteailRecipe:nameNotification withRecipeId:idRecipe withSession:defaultSession];
+}
+
 
 @end

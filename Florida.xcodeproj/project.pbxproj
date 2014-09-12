@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B406A29419C255BC00772A3F /* RecipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B406A29319C255BC00772A3F /* RecipesViewController.m */; };
 		B406A29819C257C800772A3F /* RecipesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B406A29719C257C800772A3F /* RecipesTableViewCell.m */; };
 		B406A29B19C257E600772A3F /* RecipesList.m in Sources */ = {isa = PBXBuildFile; fileRef = B406A29A19C257E600772A3F /* RecipesList.m */; };
 		B406A2BE19C25B4100772A3F /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B406A29E19C25B4100772A3F /* MKAnnotationView+WebCache.m */; };
@@ -26,6 +25,7 @@
 		B406A2CB19C25B4100772A3F /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B406A2B919C25B4100772A3F /* UIImageView+HighlightedWebCache.m */; };
 		B406A2CC19C25B4100772A3F /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B406A2BB19C25B4100772A3F /* UIImageView+WebCache.m */; };
 		B406A2CD19C25B4100772A3F /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B406A2BD19C25B4100772A3F /* UIView+WebCacheOperation.m */; };
+		B406A2D019C26E3C00772A3F /* RecipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B406A2CF19C26E3C00772A3F /* RecipesViewController.m */; };
 		B4A4A79F19BFD9FB005AA748 /* OriginData.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A4A79E19BFD9FB005AA748 /* OriginData.m */; };
 		B4A4A7ED19BFDA5F005AA748 /* EZForm.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A4A7A419BFDA5F005AA748 /* EZForm.m */; };
 		B4A4A7EE19BFDA5F005AA748 /* EZFormBooleanField.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A4A7A619BFDA5F005AA748 /* EZFormBooleanField.m */; };
@@ -87,8 +87,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B406A29219C255BC00772A3F /* RecipesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesViewController.h; sourceTree = "<group>"; };
-		B406A29319C255BC00772A3F /* RecipesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipesViewController.m; sourceTree = "<group>"; };
 		B406A29619C257C800772A3F /* RecipesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesTableViewCell.h; sourceTree = "<group>"; };
 		B406A29719C257C800772A3F /* RecipesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipesTableViewCell.m; sourceTree = "<group>"; };
 		B406A29919C257E600772A3F /* RecipesList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesList.h; sourceTree = "<group>"; };
@@ -126,6 +124,8 @@
 		B406A2BB19C25B4100772A3F /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		B406A2BC19C25B4100772A3F /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		B406A2BD19C25B4100772A3F /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		B406A2CE19C26E3C00772A3F /* RecipesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesViewController.h; sourceTree = "<group>"; };
+		B406A2CF19C26E3C00772A3F /* RecipesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipesViewController.m; sourceTree = "<group>"; };
 		B4A4A79B19BFD83A005AA748 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		B4A4A79D19BFD9FB005AA748 /* OriginData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OriginData.h; sourceTree = "<group>"; };
 		B4A4A79E19BFD9FB005AA748 /* OriginData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OriginData.m; sourceTree = "<group>"; };
@@ -333,8 +333,8 @@
 			children = (
 				B4E2D8B419C09B7500AB2B14 /* HomeViewController.h */,
 				B4E2D8B519C09B7500AB2B14 /* HomeViewController.m */,
-				B406A29219C255BC00772A3F /* RecipesViewController.h */,
-				B406A29319C255BC00772A3F /* RecipesViewController.m */,
+				B406A2CE19C26E3C00772A3F /* RecipesViewController.h */,
+				B406A2CF19C26E3C00772A3F /* RecipesViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -683,7 +683,6 @@
 				B406A29819C257C800772A3F /* RecipesTableViewCell.m in Sources */,
 				B4A4A7FA19BFDA5F005AA748 /* EZFormTextField.m in Sources */,
 				B406A2CB19C25B4100772A3F /* UIImageView+HighlightedWebCache.m in Sources */,
-				B406A29419C255BC00772A3F /* RecipesViewController.m in Sources */,
 				B406A2BF19C25B4100772A3F /* NSData+ImageContentType.m in Sources */,
 				B4A4A7F019BFDA5F005AA748 /* EZFormContinuousField.m in Sources */,
 				B4A4A7F519BFDA5F005AA748 /* EZFormInvalidIndicatorTriangleExclamationView.m in Sources */,
@@ -691,6 +690,7 @@
 				B4A4A7F219BFDA5F005AA748 /* EZFormField.m in Sources */,
 				B4A4A7F819BFDA5F005AA748 /* EZFormRadioField.m in Sources */,
 				B4A4A7EE19BFDA5F005AA748 /* EZFormBooleanField.m in Sources */,
+				B406A2D019C26E3C00772A3F /* RecipesViewController.m in Sources */,
 				B406A2C119C25B4100772A3F /* SDWebImageCompat.m in Sources */,
 				B406A2C519C25B4100772A3F /* SDWebImageManager.m in Sources */,
 				B4E2D8C419C12A9400AB2B14 /* ModelFlorida.xcdatamodeld in Sources */,
@@ -859,6 +859,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Florida/Florida-Prefix.pch";
 				INFOPLIST_FILE = "Florida/Florida-Info.plist";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -872,6 +873,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Florida/Florida-Prefix.pch";
 				INFOPLIST_FILE = "Florida/Florida-Info.plist";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

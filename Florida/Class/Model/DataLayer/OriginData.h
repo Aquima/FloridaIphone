@@ -21,4 +21,5 @@
 -(void)stateOfConection;
 #pragma Login
 -(void)invokeAsyncSyncRecipes:(NSString*)nameNotification;
+-(void)invokeAsyncSyncDetailRecipe:(NSString*)nameNotification withIdRecipe:(NSString*)idRecipe;
 @end
