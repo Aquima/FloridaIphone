@@ -51,8 +51,33 @@
     CategoryCell* newCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"categoryCellView"
                                                                              forIndexPath:indexPath];
     CategoryCD*category=[data objectAtIndex:indexPath.row];
-
+    
     [newCell loadWithCategoryCD:category];
+
+    switch (indexPath.row) {
+       
+        case 0:
+            [newCell.viewContent setBackgroundColor:[UIColor colorWithHexString:@"5c2a47"]];
+            [newCell.viewDishs setBackgroundColor:[UIColor colorWithHexString:@"5c2a47"]];
+            break;
+        case 1:
+            [newCell.viewContent setBackgroundColor:[UIColor colorWithHexString:@"3e70dd"]];
+            [newCell.viewDishs setBackgroundColor:[UIColor colorWithHexString:@"3e70dd"]];
+            break;
+        case 2:
+            [newCell.viewContent setBackgroundColor:[UIColor colorWithHexString:@"fecc66"]];
+            [newCell.viewDishs setBackgroundColor:[UIColor colorWithHexString:@"fecc66"]];
+            break;
+        case 3:
+            [newCell.viewContent setBackgroundColor:[UIColor colorWithHexString:@"a2d6b7"]];
+            [newCell.viewDishs setBackgroundColor:[UIColor colorWithHexString:@"a2d6b7"]];
+            break;
+        case 4:
+            [newCell.viewContent setBackgroundColor:[UIColor colorWithHexString:@"e089ae"]];
+            [newCell.viewDishs setBackgroundColor:[UIColor colorWithHexString:@"e089ae"]];
+            break;
+            
+    }
 
     return newCell;
 }
@@ -60,7 +85,7 @@
 #pragma mark - UICollectionViewDelegateFlowLayout Protocol methods
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(155, 155);
+    return CGSizeMake(320, 300);
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {

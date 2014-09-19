@@ -16,5 +16,5 @@
 }
 @property(nonatomic,weak)id<recipeListDelegate>delegate;
 -(void)initWithData:(NSArray*)recipes;
-
+-(void)reloadData;
 @end

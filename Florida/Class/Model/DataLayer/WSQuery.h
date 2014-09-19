@@ -10,5 +10,5 @@
 
 @interface WSQuery : NSObject
 +(void)getRecipes:(NSString *)nameNotification withSession:(NSURLSession*)defaultSession;
-+(void)getDeteailRecipe:(NSString *)nameNotification withRecipeId:(NSString*)idRecipe withSession:(NSURLSession*)defaultSession;
++(void)getDeteailRecipe:(NSString *)nameNotification withRecipeId:(NSString*)idRecipe withRecipe:(id)recipe withSession:(NSURLSession*)defaultSession;
 @end

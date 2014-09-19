@@ -8,16 +8,21 @@
         <attribute name="hasVideo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="idCategory" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="idRecipe" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ingredients" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isFavorite" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="nameCategory" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="portions" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="preparation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="ranking" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="syncComplete" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url_share" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="urlImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="urlVideo" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="CategoryCD" positionX="-63" positionY="-18" width="128" height="73"/>
-        <element name="RecipeCD" positionX="-54" positionY="9" width="128" height="195"/>
+        <element name="RecipeCD" positionX="-54" positionY="9" width="128" height="270"/>
     </elements>
 </model>

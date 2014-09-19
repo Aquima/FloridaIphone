@@ -10,6 +10,7 @@
 #import "Recipe.h"
 #import "CategoryRecipe.h"
 #import "LocalData.h"
+#import "RecipeCD.h"
 @implementation Parser
 /*
 +(NSArray*)parseLevel:(NSDictionary*)response
@@ -43,6 +44,7 @@
                 newRecipe.has_video = [recipe objectForKey:@"has_video"];
                 newRecipe.ranking = [recipe objectForKey:@"ranking"];
                 newRecipe.portions = [recipe objectForKey:@"portions"];
+                
                 [recipesList addObject:newRecipe];
             }
         }
@@ -59,6 +61,25 @@
         [infoUser setObject:@"YES" forKey:@"syncComplete"];
         [infoUser synchronize];
         return  categoryAndRecipe;
+    }
+    
+}
++(RecipeCD*)parseRecipeDetail:(NSDictionary*)response withRecipe:(id)recipe{
+    @autoreleasepool {
+        
+        RecipeCD*recipeCD=(RecipeCD*)recipe;
+        recipeCD.urlVideo=[NSString stringWithFormat:@"%@",[response objectForKey:@"url_video"]];
+        recipeCD.url_share=[NSString stringWithFormat:@"%@",[response objectForKey:@"url_share"]];
+        NSArray*ingredients=(NSArray*)[response objectForKey:@"ingredients"];
+        NSMutableString*stringIngredients=[[NSMutableString alloc] init];
+        for (NSString*ingrediente in ingredients) {
+            [stringIngredients appendString:[NSString stringWithFormat:@"\n%@",ingrediente]];
+        }
+        recipeCD.ingredients=[NSString stringWithFormat:@"%@",stringIngredients];
+        recipeCD.preparation=[NSString stringWithFormat:@"%@",[response objectForKey:@"preparation"]];
+        recipeCD.syncComplete=@1;
+        [LocalData grabarCambiosDeObjeto:recipeCD];
+        return recipeCD;
     }
     
 }

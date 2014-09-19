@@ -29,6 +29,18 @@
 */
 -(void)loadWithCategoryCD:(CategoryCD *)categoryCD{
     self.category=categoryCD;
-    [self.lblTitle setText:categoryCD.nameCategory];
+    [self.lblTitle setFont:[UIFont fontWithName:@"Lora-Regular" size:10.f]];
+    [self.lblTitleDish setFont:[UIFont fontWithName:@"Lora-Regular" size:9.f]];
+    NSMutableString *liS=[[NSMutableString alloc]init];
+    for (int i=0; i < [categoryCD.nameCategory length]; i++)
+    {
+        NSString *ichar  = [NSString stringWithFormat:@"%c", [categoryCD.nameCategory characterAtIndex:i]];
+        [liS appendString:ichar];
+       
+            [liS appendString:@" "];
+        
+    }
+
+    [self.lblTitle setText:[liS uppercaseString]];
 }
 @end

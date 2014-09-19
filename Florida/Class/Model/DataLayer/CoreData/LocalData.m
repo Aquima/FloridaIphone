@@ -40,7 +40,8 @@
     objNuevo.ranking=recipe.ranking;
     objNuevo.urlImage=recipe.url_image;
     objNuevo.hasVideo=recipe.has_video;
-    objNuevo.isFavorite=NO;
+    objNuevo.isFavorite=[NSNumber numberWithBool:NO];
+    objNuevo.syncComplete=[NSNumber numberWithBool:NO];
     objNuevo.idRecipe=recipe.idRecipe;
     // [objNuevo setValue:[aObjDic objectForKey:@"idQuotation"] forKey:@"idQuotation"];
     [self grabarCambiosDeObjeto:objNuevo];
@@ -133,4 +134,5 @@
                         sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];*/
 
 }
+
 @end

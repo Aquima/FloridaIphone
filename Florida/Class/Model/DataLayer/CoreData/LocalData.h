@@ -11,6 +11,7 @@
 @class CategoryRecipe;
 @class Recipe;
 @interface LocalData : NSObject
++ (NSManagedObject *)grabarCambiosDeObjeto:(NSManagedObject *)objDM;
 + (NSManagedObject *)insertarObjeto:(NSDictionary *)aObjDic enTabla:(NSString *)aTable;
 +(NSArray*)listElements:(NSString*)toTable;
 +(void)deleteElement:(NSManagedObject*)obj;

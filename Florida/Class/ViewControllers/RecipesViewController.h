@@ -10,4 +10,5 @@
 
 @interface RecipesViewController : UIViewController
 @property(nonatomic,strong)NSArray*recipeList;
+@property(nonatomic,strong)NSString*titleList;
 @end

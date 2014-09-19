@@ -41,7 +41,7 @@
     
     [dataTask resume];
 }
-+(void)getDeteailRecipe:(NSString *)nameNotification withRecipeId:(NSString*)idRecipe withSession:(NSURLSession*)defaultSession
++(void)getDeteailRecipe:(NSString *)nameNotification withRecipeId:(NSString*)idRecipe withRecipe:(id)recipe withSession:(NSURLSession*)defaultSession
 {
     // NSData *jsonData = [NSJSONSerialization dataWithJSONObject:userData options:kNilOptions error:nil];
     
@@ -65,7 +65,7 @@
                                                                 //parse to entity
                                                                 //  [Parser parseUser:jsonDictionary];
                                                                 //  [[Parser sharedInstance] ]
-                                                                [[NSNotificationCenter defaultCenter] postNotificationName:nameNotification object:[Parser parseRecipes:jsonDictionary]];
+                                                                [[NSNotificationCenter defaultCenter] postNotificationName:nameNotification object:[Parser parseRecipeDetail:jsonDictionary withRecipe:recipe]];
                                                             }
                                                             
                                                         }];

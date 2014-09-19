@@ -12,8 +12,11 @@
 #import "Categories.h"
 #import "RecipesViewController.h"
 
-@interface HomeViewController ()<categoriesDelegate>{
+@interface HomeViewController ()<categoriesDelegate,UITextFieldDelegate>{
     __weak IBOutlet Categories *viewCategories;
+    __weak IBOutlet UITextField *itxtSearch;
+    __weak IBOutlet UILabel *lblTitle;
+    __weak IBOutlet UIView *topView;
 }
 
 @end
@@ -34,10 +37,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self performSelector:@selector(consult) withObject:nil afterDelay:1.5];
-    
-   
+    [topView setBackgroundColor:[UIColor colorWithHexString:@"5c2a47"]];
+    [self.view setBackgroundColor:[UIColor colorWithHexString:@"edf5dd"]];
+[lblTitle setFont:[UIFont fontWithName:@"Lora-Regular" size:12.f]];
+    [lblTitle setTextColor:[UIColor colorWithHexString:@"FFFFFF"]];
+  //  [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern"]]];
+    [itxtSearch setDelegate:self];
+    NSUserDefaults*infoUser=[NSUserDefaults standardUserDefaults];
+    if ([infoUser objectForKey:@"syncComplete"]==nil) {
+        [self performSelector:@selector(consult) withObject:nil afterDelay:1.5];
+    }else{
+        [self consult];
+    }
+
     // Do any additional setup after loading the view.
+}
+- (BOOL)prefersStatusBarHidden {
+    return YES;
 }
 -(void)consult{
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endRecipes:) name:@"endRecipes" object:nil];
@@ -56,7 +72,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-#pragma CategoriesDelegate
+#pragma - CategoriesDelegate
 -(void)selectCategory:(id)category{
     CategoryCD*currentCategory=(CategoryCD*)category;
       NSPredicate *predicate = [NSPredicate predicateWithFormat:
@@ -75,6 +91,36 @@
     RecipesViewController*viewController =
     [[UIStoryboard storyboardWithName:@"Main"
                                bundle:NULL] instantiateViewControllerWithIdentifier:@"recipesVC"];
+    [viewController setTitleList:currentCategory.nameCategory];
+    [viewController setRecipeList:results];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self searchRecipes:textField.text];
+    [textField setText:@""];
+    [textField resignFirstResponder];
+    return NO;
+}
+-(void)searchRecipes:(NSString*)param{
+   
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:
+                              @"title contains[cd] %@",param];
+    
+    // commented out old starting point :)
+    //[results addObjectsFromArray:[all filteredArrayUsingPredicate:predicate]];
+    
+    // create a descriptor
+    // this assumes that the results are Key-Value-accessible
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"idCategory"
+                                                                 ascending:YES];
+    //
+    NSArray *results = [[recipesCDList filteredArrayUsingPredicate:predicate]
+                        sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];
+    RecipesViewController*viewController =
+    [[UIStoryboard storyboardWithName:@"Main"
+                               bundle:NULL] instantiateViewControllerWithIdentifier:@"recipesVC"];
+     [viewController setTitleList:[NSString stringWithFormat:@"Resultados de \'%@\'",param]];
     [viewController setRecipeList:results];
     [self.navigationController pushViewController:viewController animated:YES];
 }

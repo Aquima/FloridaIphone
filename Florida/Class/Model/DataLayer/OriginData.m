@@ -73,8 +73,9 @@
     }
    
 }
--(void)invokeAsyncSyncDetailRecipe:(NSString*)nameNotification withIdRecipe:(NSString*)idRecipe{
-    [WSQuery getDeteailRecipe:nameNotification withRecipeId:idRecipe withSession:defaultSession];
+-(void)invokeAsyncSyncDetailRecipe:(NSString*)nameNotification withIdRecipe:(NSString*)idRecipe withRecipe:(id)recipe{
+    [WSQuery getDeteailRecipe:nameNotification withRecipeId:idRecipe withRecipe:recipe withSession:defaultSession];
+   // [WSQuery getDeteailRecipe:nameNotification withRecipeId:idRecipe withSession:defaultSession];
 }
 
 

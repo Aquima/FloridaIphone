@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 @class Recipe;
+@class RecipeCD;
 @interface Parser : NSObject
 
 +(NSDictionary*)parseRecipes:(NSDictionary*)response;
-
++(RecipeCD*)parseRecipeDetail:(NSDictionary*)response withRecipe:(id)recipe;
 @end

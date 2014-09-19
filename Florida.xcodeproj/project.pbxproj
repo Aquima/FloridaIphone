@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B403AEF519C38BAB000EDD88 /* RecipeCD.m in Sources */ = {isa = PBXBuildFile; fileRef = B403AEF419C38BAB000EDD88 /* RecipeCD.m */; };
 		B406A29819C257C800772A3F /* RecipesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B406A29719C257C800772A3F /* RecipesTableViewCell.m */; };
 		B406A29B19C257E600772A3F /* RecipesList.m in Sources */ = {isa = PBXBuildFile; fileRef = B406A29A19C257E600772A3F /* RecipesList.m */; };
 		B406A2BE19C25B4100772A3F /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B406A29E19C25B4100772A3F /* MKAnnotationView+WebCache.m */; };
@@ -26,6 +27,16 @@
 		B406A2CC19C25B4100772A3F /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B406A2BB19C25B4100772A3F /* UIImageView+WebCache.m */; };
 		B406A2CD19C25B4100772A3F /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B406A2BD19C25B4100772A3F /* UIView+WebCacheOperation.m */; };
 		B406A2D019C26E3C00772A3F /* RecipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B406A2CF19C26E3C00772A3F /* RecipesViewController.m */; };
+		B40ED69119C343BA00A8796F /* RecipeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B40ED69019C343BA00A8796F /* RecipeDetailViewController.m */; };
+		B459462819C5095500677F29 /* GrayRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B459462019C5095500677F29 /* GrayRoundButton.m */; };
+		B459462919C5095500677F29 /* GrayTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B459462219C5095500677F29 /* GrayTextField.m */; };
+		B459462A19C5095500677F29 /* RoundContainerViewLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = B459462419C5095500677F29 /* RoundContainerViewLogin.m */; };
+		B459462B19C5095500677F29 /* SearchTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B459462619C5095500677F29 /* SearchTextField.m */; };
+		B459463219C51E0200677F29 /* Lora-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B459462D19C51E0200677F29 /* Lora-Bold.ttf */; };
+		B459463319C51E0200677F29 /* Lora-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B459462E19C51E0200677F29 /* Lora-BoldItalic.ttf */; };
+		B459463419C51E0200677F29 /* Lora-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B459462F19C51E0200677F29 /* Lora-Italic.ttf */; };
+		B459463519C51E0200677F29 /* Lora-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B459463019C51E0200677F29 /* Lora-Regular.ttf */; };
+		B459463619C51E0200677F29 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = B459463119C51E0200677F29 /* OFL.txt */; };
 		B4A4A79F19BFD9FB005AA748 /* OriginData.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A4A79E19BFD9FB005AA748 /* OriginData.m */; };
 		B4A4A7ED19BFDA5F005AA748 /* EZForm.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A4A7A419BFDA5F005AA748 /* EZForm.m */; };
 		B4A4A7EE19BFDA5F005AA748 /* EZFormBooleanField.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A4A7A619BFDA5F005AA748 /* EZFormBooleanField.m */; };
@@ -68,7 +79,6 @@
 		B4E2D8C119C0B8B200AB2B14 /* CategoryRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E2D8C019C0B8B200AB2B14 /* CategoryRecipe.m */; };
 		B4E2D8C419C12A9400AB2B14 /* ModelFlorida.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4E2D8C219C12A9400AB2B14 /* ModelFlorida.xcdatamodeld */; };
 		B4E2D8C719C12AB400AB2B14 /* kbStoreDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E2D8C619C12AB400AB2B14 /* kbStoreDataModel.m */; };
-		B4E2D8CB19C12C5E00AB2B14 /* RecipeCD.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E2D8CA19C12C5E00AB2B14 /* RecipeCD.m */; };
 		B4E2D8CE19C12C5E00AB2B14 /* CategoryCD.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E2D8CD19C12C5E00AB2B14 /* CategoryCD.m */; };
 		B4E2D8D219C1456300AB2B14 /* LocalData.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E2D8D119C1456300AB2B14 /* LocalData.m */; };
 		B4E2D8D619C1E9A700AB2B14 /* Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E2D8D519C1E9A700AB2B14 /* Categories.m */; };
@@ -87,6 +97,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B403AEF319C38BAB000EDD88 /* RecipeCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeCD.h; sourceTree = "<group>"; };
+		B403AEF419C38BAB000EDD88 /* RecipeCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeCD.m; sourceTree = "<group>"; };
 		B406A29619C257C800772A3F /* RecipesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesTableViewCell.h; sourceTree = "<group>"; };
 		B406A29719C257C800772A3F /* RecipesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipesTableViewCell.m; sourceTree = "<group>"; };
 		B406A29919C257E600772A3F /* RecipesList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesList.h; sourceTree = "<group>"; };
@@ -126,6 +138,21 @@
 		B406A2BD19C25B4100772A3F /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		B406A2CE19C26E3C00772A3F /* RecipesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesViewController.h; sourceTree = "<group>"; };
 		B406A2CF19C26E3C00772A3F /* RecipesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipesViewController.m; sourceTree = "<group>"; };
+		B40ED68F19C343BA00A8796F /* RecipeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeDetailViewController.h; sourceTree = "<group>"; };
+		B40ED69019C343BA00A8796F /* RecipeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeDetailViewController.m; sourceTree = "<group>"; };
+		B459461F19C5095500677F29 /* GrayRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrayRoundButton.h; sourceTree = "<group>"; };
+		B459462019C5095500677F29 /* GrayRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrayRoundButton.m; sourceTree = "<group>"; };
+		B459462119C5095500677F29 /* GrayTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrayTextField.h; sourceTree = "<group>"; };
+		B459462219C5095500677F29 /* GrayTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrayTextField.m; sourceTree = "<group>"; };
+		B459462319C5095500677F29 /* RoundContainerViewLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundContainerViewLogin.h; sourceTree = "<group>"; };
+		B459462419C5095500677F29 /* RoundContainerViewLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundContainerViewLogin.m; sourceTree = "<group>"; };
+		B459462519C5095500677F29 /* SearchTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTextField.h; sourceTree = "<group>"; };
+		B459462619C5095500677F29 /* SearchTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTextField.m; sourceTree = "<group>"; };
+		B459462D19C51E0200677F29 /* Lora-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Bold.ttf"; sourceTree = "<group>"; };
+		B459462E19C51E0200677F29 /* Lora-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-BoldItalic.ttf"; sourceTree = "<group>"; };
+		B459462F19C51E0200677F29 /* Lora-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Italic.ttf"; sourceTree = "<group>"; };
+		B459463019C51E0200677F29 /* Lora-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Regular.ttf"; sourceTree = "<group>"; };
+		B459463119C51E0200677F29 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		B4A4A79B19BFD83A005AA748 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		B4A4A79D19BFD9FB005AA748 /* OriginData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OriginData.h; sourceTree = "<group>"; };
 		B4A4A79E19BFD9FB005AA748 /* OriginData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OriginData.m; sourceTree = "<group>"; };
@@ -205,8 +232,6 @@
 		B4E2D8C319C12A9400AB2B14 /* ModelFlorida.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ModelFlorida.xcdatamodel; sourceTree = "<group>"; };
 		B4E2D8C519C12AB400AB2B14 /* kbStoreDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kbStoreDataModel.h; sourceTree = "<group>"; };
 		B4E2D8C619C12AB400AB2B14 /* kbStoreDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = kbStoreDataModel.m; sourceTree = "<group>"; };
-		B4E2D8C919C12C5E00AB2B14 /* RecipeCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeCD.h; sourceTree = "<group>"; };
-		B4E2D8CA19C12C5E00AB2B14 /* RecipeCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeCD.m; sourceTree = "<group>"; };
 		B4E2D8CC19C12C5E00AB2B14 /* CategoryCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCD.h; sourceTree = "<group>"; };
 		B4E2D8CD19C12C5E00AB2B14 /* CategoryCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCD.m; sourceTree = "<group>"; };
 		B4E2D8D019C1456300AB2B14 /* LocalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalData.h; sourceTree = "<group>"; };
@@ -294,6 +319,33 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		B459461C19C5095500677F29 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				B459461F19C5095500677F29 /* GrayRoundButton.h */,
+				B459462019C5095500677F29 /* GrayRoundButton.m */,
+				B459462119C5095500677F29 /* GrayTextField.h */,
+				B459462219C5095500677F29 /* GrayTextField.m */,
+				B459462319C5095500677F29 /* RoundContainerViewLogin.h */,
+				B459462419C5095500677F29 /* RoundContainerViewLogin.m */,
+				B459462519C5095500677F29 /* SearchTextField.h */,
+				B459462619C5095500677F29 /* SearchTextField.m */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		B459462C19C51E0200677F29 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B459462D19C51E0200677F29 /* Lora-Bold.ttf */,
+				B459462E19C51E0200677F29 /* Lora-BoldItalic.ttf */,
+				B459462F19C51E0200677F29 /* Lora-Italic.ttf */,
+				B459463019C51E0200677F29 /* Lora-Regular.ttf */,
+				B459463119C51E0200677F29 /* OFL.txt */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		B4A4A79619BFD7A9005AA748 /* Class */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +373,7 @@
 		B4A4A79819BFD7A9005AA748 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B459461C19C5095500677F29 /* CustomView */,
 				B406A29519C257A300772A3F /* RecipesViewController */,
 				B4E2D8D319C1E85600AB2B14 /* HomeViewController */,
 				B4E2D8DA19C20AF600AB2B14 /* MediaRecipes.xcassets */,
@@ -335,6 +388,8 @@
 				B4E2D8B519C09B7500AB2B14 /* HomeViewController.m */,
 				B406A2CE19C26E3C00772A3F /* RecipesViewController.h */,
 				B406A2CF19C26E3C00772A3F /* RecipesViewController.m */,
+				B40ED68F19C343BA00A8796F /* RecipeDetailViewController.h */,
+				B40ED69019C343BA00A8796F /* RecipeDetailViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -489,6 +544,7 @@
 		B4AFAACB19BE5DDA00CCC368 /* Florida */ = {
 			isa = PBXGroup;
 			children = (
+				B459462C19C51E0200677F29 /* Fonts */,
 				B4A4A79619BFD7A9005AA748 /* Class */,
 				B4AFAAD419BE5DDA00CCC368 /* AppDelegate.h */,
 				B4AFAAD519BE5DDA00CCC368 /* AppDelegate.m */,
@@ -552,8 +608,8 @@
 			children = (
 				B4E2D8CC19C12C5E00AB2B14 /* CategoryCD.h */,
 				B4E2D8CD19C12C5E00AB2B14 /* CategoryCD.m */,
-				B4E2D8C919C12C5E00AB2B14 /* RecipeCD.h */,
-				B4E2D8CA19C12C5E00AB2B14 /* RecipeCD.m */,
+				B403AEF319C38BAB000EDD88 /* RecipeCD.h */,
+				B403AEF419C38BAB000EDD88 /* RecipeCD.m */,
 			);
 			path = CoreDataEntities;
 			sourceTree = "<group>";
@@ -656,8 +712,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4E2D8DB19C20AF600AB2B14 /* MediaRecipes.xcassets in Resources */,
+				B459463519C51E0200677F29 /* Lora-Regular.ttf in Resources */,
+				B459463419C51E0200677F29 /* Lora-Italic.ttf in Resources */,
+				B459463619C51E0200677F29 /* OFL.txt in Resources */,
+				B459463319C51E0200677F29 /* Lora-BoldItalic.ttf in Resources */,
 				B4AFAADE19BE5DDA00CCC368 /* Images.xcassets in Resources */,
 				B4AFAAD019BE5DDA00CCC368 /* InfoPlist.strings in Resources */,
+				B459463219C51E0200677F29 /* Lora-Bold.ttf in Resources */,
 				B4AFAAD919BE5DDA00CCC368 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -693,6 +754,7 @@
 				B406A2D019C26E3C00772A3F /* RecipesViewController.m in Sources */,
 				B406A2C119C25B4100772A3F /* SDWebImageCompat.m in Sources */,
 				B406A2C519C25B4100772A3F /* SDWebImageManager.m in Sources */,
+				B459462819C5095500677F29 /* GrayRoundButton.m in Sources */,
 				B4E2D8C419C12A9400AB2B14 /* ModelFlorida.xcdatamodeld in Sources */,
 				B406A2C019C25B4100772A3F /* SDImageCache.m in Sources */,
 				B4A4A7F419BFDA5F005AA748 /* EZFormInputControl.m in Sources */,
@@ -702,14 +764,15 @@
 				B406A2C319C25B4100772A3F /* SDWebImageDownloader.m in Sources */,
 				B4A4A80D19BFDA5F005AA748 /* THMultiPartLabel.m in Sources */,
 				B4A4A7EF19BFDA5F005AA748 /* EZFormCommonValidators.m in Sources */,
-				B4E2D8CB19C12C5E00AB2B14 /* RecipeCD.m in Sources */,
 				B406A2C919C25B4100772A3F /* UIImage+MultiFormat.m in Sources */,
 				B4A4A7F919BFDA5F005AA748 /* EZFormStandardInputAccessoryView.m in Sources */,
 				B406A2CA19C25B4100772A3F /* UIImage+WebP.m in Sources */,
+				B459462919C5095500677F29 /* GrayTextField.m in Sources */,
 				B4A4A7FD19BFDA5F005AA748 /* Reachability.m in Sources */,
 				B4AFAADC19BE5DDA00CCC368 /* ViewController.m in Sources */,
 				B4E2D8B619C09B7500AB2B14 /* HomeViewController.m in Sources */,
 				B4E2D8D219C1456300AB2B14 /* LocalData.m in Sources */,
+				B40ED69119C343BA00A8796F /* RecipeDetailViewController.m in Sources */,
 				B406A29B19C257E600772A3F /* RecipesList.m in Sources */,
 				B4A4A7F619BFDA5F005AA748 /* EZFormMultiRadioFormField.m in Sources */,
 				B4A4A80C19BFDA5F005AA748 /* SWRevealViewController.m in Sources */,
@@ -721,14 +784,17 @@
 				B4A4A7ED19BFDA5F005AA748 /* EZForm.m in Sources */,
 				B406A2C819C25B4100772A3F /* UIImage+GIF.m in Sources */,
 				B4E2D8C119C0B8B200AB2B14 /* CategoryRecipe.m in Sources */,
+				B459462A19C5095500677F29 /* RoundContainerViewLogin.m in Sources */,
 				B4A4A7F719BFDA5F005AA748 /* EZFormRadioChoiceViewController.m in Sources */,
 				B4A4A81719BFDD15005AA748 /* WSQuery.m in Sources */,
+				B459462B19C5095500677F29 /* SearchTextField.m in Sources */,
 				B406A2BE19C25B4100772A3F /* MKAnnotationView+WebCache.m in Sources */,
 				B4AFAAD619BE5DDA00CCC368 /* AppDelegate.m in Sources */,
 				B406A2C419C25B4100772A3F /* SDWebImageDownloaderOperation.m in Sources */,
 				B4E2D8B919C0A6AB00AB2B14 /* Recipe.m in Sources */,
 				B4A4A7F119BFDA5F005AA748 /* EZFormDateField.m in Sources */,
 				B406A2CC19C25B4100772A3F /* UIImageView+WebCache.m in Sources */,
+				B403AEF519C38BAB000EDD88 /* RecipeCD.m in Sources */,
 				B4AFAAD219BE5DDA00CCC368 /* main.m in Sources */,
 				B4E2D8BE19C0A78100AB2B14 /* Parser.m in Sources */,
 				B4A4A7FB19BFDA5F005AA748 /* UIView+EZFormUtility.m in Sources */,

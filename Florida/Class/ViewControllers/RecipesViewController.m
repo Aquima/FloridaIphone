@@ -9,10 +9,12 @@
 #import "RecipesViewController.h"
 #import "RecipesList.h"
 #import "RecipeCD.h"
+#import "RecipeDetailViewController.h"
 @interface RecipesViewController ()<recipeListDelegate>
 {
     RecipeCD*sendRecipe;
     __weak IBOutlet RecipesList *viewRecipesList;
+    __weak IBOutlet UILabel*lblTitle;
 }
 @end
 
@@ -31,9 +33,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [lblTitle setText:self.titleList];
     [viewRecipesList initWithData:recipeList];
+    [viewRecipesList setDelegate:self];
 }
-
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -56,5 +62,29 @@
 #pragma mark - RecipesDelegate
 -(void)selectRecipe:(id)recipe{
     sendRecipe=recipe;
+    BOOL syncComplete = [[sendRecipe syncComplete] boolValue];
+    if (syncComplete==NO) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endDetail:) name:@"endDetail" object:nil];
+        [[OriginData sharedInstance] invokeAsyncSyncDetailRecipe:@"endDetail" withIdRecipe:sendRecipe.idRecipe withRecipe:sendRecipe];
+       // [[OriginData sharedInstance] invokeAsyncSyncDetailRecipe:@"endDetail" withIdRecipe:sendRecipe.idRecipe se];
+    }else{
+        RecipeDetailViewController*viewController =
+        [[UIStoryboard storyboardWithName:@"Main"
+                                   bundle:NULL] instantiateViewControllerWithIdentifier:@"recipeDetailVC"];
+        [viewController setRecipe:sendRecipe];
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
+    
+}
+-(void)endDetail:(NSNotification*)notification{
+    [viewRecipesList reloadData];
+    sendRecipe=(RecipeCD*)notification.object;
+    RecipeDetailViewController*viewController =
+    [[UIStoryboard storyboardWithName:@"Main"
+                               bundle:NULL] instantiateViewControllerWithIdentifier:@"recipeDetailVC"];
+    [viewController setRecipe:sendRecipe];
+    [self.navigationController pushViewController:viewController animated:YES];
+
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:notification.name object:nil];
 }
 @end

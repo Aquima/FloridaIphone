@@ -34,7 +34,9 @@
     tblRecipes.delegate=self;
     [tblRecipes reloadData];
 }
-
+-(void)reloadData{
+    [tblRecipes reloadData];
+}
 /*
  // Only override drawRect: if you perform custom drawing.
  // An empty implementation adversely affects performance during animation.

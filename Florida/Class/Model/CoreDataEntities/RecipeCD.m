@@ -2,7 +2,7 @@
 //  RecipeCD.m
 //  Florida
 //
-//  Created by Raul Quispe on 9/10/14.
+//  Created by Raul Quispe on 9/12/14.
 //  Copyright (c) 2014 kodebinario. All rights reserved.
 //
 
@@ -11,15 +11,20 @@
 
 @implementation RecipeCD
 
-@dynamic idRecipe;
-@dynamic title;
-@dynamic time;
-@dynamic portions;
-@dynamic urlImage;
 @dynamic hasVideo;
-@dynamic ranking;
-@dynamic isFavorite;
 @dynamic idCategory;
+@dynamic idRecipe;
+@dynamic ingredients;
+@dynamic isFavorite;
 @dynamic nameCategory;
+@dynamic portions;
+@dynamic preparation;
+@dynamic ranking;
+@dynamic syncComplete;
+@dynamic time;
+@dynamic title;
+@dynamic url_share;
+@dynamic urlImage;
+@dynamic urlVideo;
 
 @end
