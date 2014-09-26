@@ -10,7 +10,11 @@
 @class RecipeCD;
 @interface RecipesTableViewCell : UITableViewCell{
     __weak IBOutlet UIImageView*imgRecipe;
+    __weak IBOutlet UIImageView*imgHasVideo;
     __weak IBOutlet UILabel*lblTitle;
+     __weak IBOutlet UILabel*lblPortions;
+     __weak IBOutlet UILabel*lblTimer;
+    __weak IBOutlet UIView*puntationsView;
     __strong IBOutletCollection(UIButton) NSArray*btnRanking;
 }
 @property(nonatomic,strong) RecipeCD*recipe;

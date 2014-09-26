@@ -11,8 +11,10 @@
 @interface RecipeDetailViewController ()
 {
     
-    __weak IBOutlet UILabel *lblTitle;
+ 
     __weak IBOutlet UITextView *txtIgredientsAndPreparation;
+    __weak IBOutlet UIView *topView;
+    __weak IBOutlet UIView *superTopView;                                                              
 }
 @end
 
@@ -31,8 +33,7 @@
 {
     [super viewDidLoad];
     NSLog(@"Recipe: %@",recipe);
-    [lblTitle setText:recipe.title];
-    [txtIgredientsAndPreparation setText:[NSString stringWithFormat:@"%@\n\n%@",recipe.ingredients,recipe.preparation]];
+
     // Do any additional setup after loading the view.
 }
 - (BOOL)prefersStatusBarHidden {

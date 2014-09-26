@@ -71,11 +71,12 @@
         recipeCD.urlVideo=[NSString stringWithFormat:@"%@",[response objectForKey:@"url_video"]];
         recipeCD.url_share=[NSString stringWithFormat:@"%@",[response objectForKey:@"url_share"]];
         NSArray*ingredients=(NSArray*)[response objectForKey:@"ingredients"];
-        NSMutableString*stringIngredients=[[NSMutableString alloc] init];
-        for (NSString*ingrediente in ingredients) {
-            [stringIngredients appendString:[NSString stringWithFormat:@"\n%@",ingrediente]];
-        }
-        recipeCD.ingredients=[NSString stringWithFormat:@"%@",stringIngredients];
+        NSData *arrayData = [NSKeyedArchiver archivedDataWithRootObject:ingredients];
+     //   NSMutableString*stringIngredients=[[NSMutableString alloc] init];
+     //   for (NSString*ingrediente in ingredients) {
+    //        [stringIngredients appendString:[NSString stringWithFormat:@"\n%@",ingrediente]];
+    //    }
+        recipeCD.ingredients=arrayData;//[NSString stringWithFormat:@"%@",stringIngredients];
         recipeCD.preparation=[NSString stringWithFormat:@"%@",[response objectForKey:@"preparation"]];
         recipeCD.syncComplete=@1;
         [LocalData grabarCambiosDeObjeto:recipeCD];

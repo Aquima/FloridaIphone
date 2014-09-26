@@ -10,11 +10,15 @@
 #import "RecipesList.h"
 #import "RecipeCD.h"
 #import "RecipeDetailViewController.h"
-@interface RecipesViewController ()<recipeListDelegate>
+#import "MBProgressHUD.h"
+@interface RecipesViewController ()<recipeListDelegate,UIGestureRecognizerDelegate>
 {
     RecipeCD*sendRecipe;
     __weak IBOutlet RecipesList *viewRecipesList;
     __weak IBOutlet UILabel*lblTitle;
+    __weak IBOutlet UIView *topView;
+    __weak IBOutlet UIView *superTopView;
+     MBProgressHUD *progress;
 }
 @end
 
@@ -32,13 +36,33 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    progress = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:progress];
+    progress.mode = MBProgressHUDModeIndeterminate;
+    [superTopView setBackgroundColor:[UIColor colorWithHexString:@"62bf40"]];
+
+    [topView setBackgroundColor:[UIColor colorWithHexString:@"42a221"]];
     // Do any additional setup after loading the view.
     [lblTitle setText:self.titleList];
     [viewRecipesList initWithData:recipeList];
     [viewRecipesList setDelegate:self];
+ 
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
+}
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return YES;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return [gestureRecognizer isKindOfClass:UIScreenEdgePanGestureRecognizer.class];
 }
 - (BOOL)prefersStatusBarHidden {
-    return YES;
+    return NO;
+}
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 - (void)didReceiveMemoryWarning
 {
@@ -64,6 +88,7 @@
     sendRecipe=recipe;
     BOOL syncComplete = [[sendRecipe syncComplete] boolValue];
     if (syncComplete==NO) {
+        [progress show:YES];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endDetail:) name:@"endDetail" object:nil];
         [[OriginData sharedInstance] invokeAsyncSyncDetailRecipe:@"endDetail" withIdRecipe:sendRecipe.idRecipe withRecipe:sendRecipe];
        // [[OriginData sharedInstance] invokeAsyncSyncDetailRecipe:@"endDetail" withIdRecipe:sendRecipe.idRecipe se];
@@ -79,12 +104,14 @@
 -(void)endDetail:(NSNotification*)notification{
     [viewRecipesList reloadData];
     sendRecipe=(RecipeCD*)notification.object;
+     [progress hide:YES];
     RecipeDetailViewController*viewController =
     [[UIStoryboard storyboardWithName:@"Main"
                                bundle:NULL] instantiateViewControllerWithIdentifier:@"recipeDetailVC"];
     [viewController setRecipe:sendRecipe];
     [self.navigationController pushViewController:viewController animated:YES];
 
+   
     [[NSNotificationCenter defaultCenter] removeObserver:self name:notification.name object:nil];
 }
 @end

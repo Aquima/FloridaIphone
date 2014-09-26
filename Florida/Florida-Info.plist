@@ -26,7 +26,7 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Lora-Regular.ttf</string>
+		<string>Roboto-Medium.ttf</string>
 		<string>Lora-Italic.ttf</string>
 		<string>Lora-Bold.ttf</string>
 		<string>Lora-BoldItalic.ttf</string>
@@ -37,9 +37,13 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIStatusBarHidden</key>
+	<true/>
 </dict>
 </plist>

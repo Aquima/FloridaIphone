@@ -73,7 +73,7 @@
     return 1;
 }// Default is 1 if not implemented
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 110;
+    return 120;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     RecipesTableViewCell*curretnCell=(RecipesTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];

@@ -182,7 +182,7 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 		self.labelText = nil;
 		self.detailsLabelText = nil;
 		self.opacity = 1.0f;
-        self.color =[UIColor clearColor];
+        self.color =[UIColor colorWithHexString:@"339933"];
 		self.labelFont = [UIFont boldSystemFontOfSize:kLabelFontSize];
         self.labelColor = [UIColor whiteColor];
 		self.detailsLabelFont = [UIFont boldSystemFontOfSize:kDetailsLabelFontSize];
@@ -486,7 +486,7 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 		// Update to indeterminate indicator
 		[indicator removeFromSuperview];
 		self.indicator = MB_AUTORELEASE([[UIActivityIndicatorView alloc]
-										 initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray] );
+										 initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite] );
      //   self.indicator=[UIColor orangeColor];
 		[(UIActivityIndicatorView *)indicator startAnimating];
 		[self addSubview:indicator];

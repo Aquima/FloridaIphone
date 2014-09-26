@@ -51,7 +51,7 @@
     CategoryCell* newCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"categoryCellView"
                                                                              forIndexPath:indexPath];
     CategoryCD*category=[data objectAtIndex:indexPath.row];
-    
+    NSLog(@"%@ %@",category.idCategory,category.nameCategory);
     [newCell loadWithCategoryCD:category];
 
     switch (indexPath.row) {
