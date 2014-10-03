@@ -69,11 +69,11 @@
 -(IBAction)selectorBtn:(UIButton*)sender{
     switch (sender.tag) {
         case 0:
-            [self.delegate selectFacebookWith:self.shareMessage];
+            [self.delegate selectTwitterWith:self.shareMessage];
             break;
             
         case 1:
-            [self.delegate selectTwitterWith:self.shareMessage];
+            [self.delegate selectFacebookWith:self.shareMessage];
             break;
         default:
             [self hide:YES];

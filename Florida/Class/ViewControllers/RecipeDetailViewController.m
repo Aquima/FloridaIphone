@@ -20,6 +20,7 @@
 #import "BuyListView.h"
 #import "GreenButton.h"
 #import "ShareView.h"
+@import Social;
 @interface RecipeDetailViewController ()<MenuTableViewCellDelegate,MenuViewDelegate,NoteViewDelegate,BuyListViewDelegate,ShareViewDelegate>
 {
     
@@ -388,8 +389,26 @@
 #pragma mark - ShareViewDelegate
 -(void)selectTwitterWith:(NSString*)message{
     
+    SLComposeViewController *tweetSheet = [SLComposeViewController
+                                           composeViewControllerForServiceType:SLServiceTypeTwitter];
+    [tweetSheet setInitialText:[NSString stringWithFormat:@"%@",recipe.url_share]];
+    NSURL *url = [NSURL URLWithString:recipe.urlImage];
+    NSData *imageData = [NSData dataWithContentsOfURL:url];
+    UIImage*image=[[UIImage alloc] initWithData:imageData];
+    [tweetSheet addImage:image];
+
+    [self presentViewController:tweetSheet animated:YES completion:nil];
+ 
 }
 -(void)selectFacebookWith:(NSString*)message{
+    SLComposeViewController *facebookSheet = [SLComposeViewController
+                                              composeViewControllerForServiceType:SLServiceTypeFacebook];
     
+    [facebookSheet setInitialText:[NSString stringWithFormat:@"%@",recipe.url_share]];
+    NSURL *url = [NSURL URLWithString:recipe.urlImage];
+    NSData *imageData = [NSData dataWithContentsOfURL:url];
+    UIImage*image=[[UIImage alloc] initWithData:imageData];
+    [facebookSheet addImage:image];
+    [self presentViewController:facebookSheet animated:YES completion:nil];
 }
 @end
