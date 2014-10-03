@@ -26,5 +26,6 @@
 @dynamic url_share;
 @dynamic urlImage;
 @dynamic urlVideo;
-
+@dynamic note;
+@dynamic isBuyList;
 @end

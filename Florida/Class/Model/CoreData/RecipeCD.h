@@ -27,5 +27,6 @@
 @property (nonatomic, retain) NSString * url_share;
 @property (nonatomic, retain) NSString * urlImage;
 @property (nonatomic, retain) NSString * urlVideo;
-
+@property (nonatomic, retain) NSString * note;
+@property (nonatomic, retain) NSNumber * isBuyList;
 @end

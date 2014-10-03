@@ -29,6 +29,9 @@
 		B40ED69119C343BA00A8796F /* RecipeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B40ED69019C343BA00A8796F /* RecipeDetailViewController.m */; };
 		B442541319D549FA00E74DBC /* MediaRecipes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B442541219D549FA00E74DBC /* MediaRecipes.xcassets */; };
 		B446555219D24EFD00DDE99D /* MediaHome.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B446555119D24EFD00DDE99D /* MediaHome.xcassets */; };
+		B453750719DC9D080036CFBD /* BuyListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B453750619DC9D080036CFBD /* BuyListView.m */; };
+		B453750B19DCA23C0036CFBD /* IngredientsCheckTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B453750919DCA23C0036CFBD /* IngredientsCheckTableViewCell.m */; };
+		B453750C19DCA23C0036CFBD /* IngredientsCheckTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B453750A19DCA23C0036CFBD /* IngredientsCheckTableViewCell.xib */; };
 		B459462819C5095500677F29 /* GrayRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B459462019C5095500677F29 /* GrayRoundButton.m */; };
 		B459462919C5095500677F29 /* GrayTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B459462219C5095500677F29 /* GrayTextField.m */; };
 		B459462A19C5095500677F29 /* RoundContainerViewLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = B459462419C5095500677F29 /* RoundContainerViewLogin.m */; };
@@ -38,8 +41,18 @@
 		B459463419C51E0200677F29 /* Lora-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B459462F19C51E0200677F29 /* Lora-Italic.ttf */; };
 		B459463519C51E0200677F29 /* Lora-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B459463019C51E0200677F29 /* Lora-Regular.ttf */; };
 		B459463619C51E0200677F29 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = B459463119C51E0200677F29 /* OFL.txt */; };
+		B45ED9F719DF032E00D990A3 /* ShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = B45ED9F619DF032E00D990A3 /* ShareView.m */; };
+		B46E442219D849290057410C /* IngredientsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B46E442119D849290057410C /* IngredientsTableViewCell.m */; };
+		B46E442519D84BBC0057410C /* PreparationsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B46E442419D84BBC0057410C /* PreparationsTableViewCell.m */; };
+		B46E442819D89F9D0057410C /* GreenButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B46E442719D89F9D0057410C /* GreenButton.m */; };
+		B46E442B19D8A0D00057410C /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B46E442A19D8A0D00057410C /* MenuTableViewCell.m */; };
+		B46E442E19D8B4B40057410C /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = B46E442D19D8B4B40057410C /* MenuView.m */; };
+		B473A4AB19D72CDA0020144A /* RecipeDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B473A4AA19D72CDA0020144A /* RecipeDetailTableViewCell.m */; };
+		B473A4AE19D742BD0020144A /* SeciontTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B473A4AD19D742BD0020144A /* SeciontTableViewCell.m */; };
+		B473A4B019D77E330020144A /* MediaDetailRecipe.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B473A4AF19D77E330020144A /* MediaDetailRecipe.xcassets */; };
 		B49BE42919D623B400E2FC34 /* CategoryCD.m in Sources */ = {isa = PBXBuildFile; fileRef = B49BE42819D623B400E2FC34 /* CategoryCD.m */; };
 		B49BE42C19D623B400E2FC34 /* RecipeCD.m in Sources */ = {isa = PBXBuildFile; fileRef = B49BE42B19D623B400E2FC34 /* RecipeCD.m */; };
+		B4A0D78919DE1A760001C411 /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A0D78819DE1A760001C411 /* SearchView.m */; };
 		B4A4A79F19BFD9FB005AA748 /* OriginData.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A4A79E19BFD9FB005AA748 /* OriginData.m */; };
 		B4A4A7ED19BFDA5F005AA748 /* EZForm.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A4A7A419BFDA5F005AA748 /* EZForm.m */; };
 		B4A4A7EE19BFDA5F005AA748 /* EZFormBooleanField.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A4A7A619BFDA5F005AA748 /* EZFormBooleanField.m */; };
@@ -60,6 +73,8 @@
 		B4A4A7FD19BFDA5F005AA748 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A4A7C919BFDA5F005AA748 /* Reachability.m */; };
 		B4A4A81119BFDA7A005AA748 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A4A81019BFDA7A005AA748 /* UIColor+Hex.m */; };
 		B4A4A81719BFDD15005AA748 /* WSQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A4A81619BFDD15005AA748 /* WSQuery.m */; };
+		B4A4DC8319D9968400539BB0 /* AlertFlorida.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A4DC8219D9968400539BB0 /* AlertFlorida.m */; };
+		B4A4DC8619D9A61800539BB0 /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A4DC8519D9A61800539BB0 /* NoteView.m */; };
 		B4AFAAC619BE5DDA00CCC368 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AFAAC519BE5DDA00CCC368 /* Foundation.framework */; };
 		B4AFAAC819BE5DDA00CCC368 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AFAAC719BE5DDA00CCC368 /* CoreGraphics.framework */; };
 		B4AFAACA19BE5DDA00CCC368 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AFAAC919BE5DDA00CCC368 /* UIKit.framework */; };
@@ -141,6 +156,11 @@
 		B40ED69019C343BA00A8796F /* RecipeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeDetailViewController.m; sourceTree = "<group>"; };
 		B442541219D549FA00E74DBC /* MediaRecipes.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MediaRecipes.xcassets; sourceTree = "<group>"; };
 		B446555119D24EFD00DDE99D /* MediaHome.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MediaHome.xcassets; sourceTree = "<group>"; };
+		B453750519DC9D080036CFBD /* BuyListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyListView.h; sourceTree = "<group>"; };
+		B453750619DC9D080036CFBD /* BuyListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyListView.m; sourceTree = "<group>"; };
+		B453750819DCA23C0036CFBD /* IngredientsCheckTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngredientsCheckTableViewCell.h; sourceTree = "<group>"; };
+		B453750919DCA23C0036CFBD /* IngredientsCheckTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientsCheckTableViewCell.m; sourceTree = "<group>"; };
+		B453750A19DCA23C0036CFBD /* IngredientsCheckTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientsCheckTableViewCell.xib; sourceTree = "<group>"; };
 		B459461F19C5095500677F29 /* GrayRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrayRoundButton.h; sourceTree = "<group>"; };
 		B459462019C5095500677F29 /* GrayRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrayRoundButton.m; sourceTree = "<group>"; };
 		B459462119C5095500677F29 /* GrayTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrayTextField.h; sourceTree = "<group>"; };
@@ -154,10 +174,29 @@
 		B459462F19C51E0200677F29 /* Lora-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Italic.ttf"; sourceTree = "<group>"; };
 		B459463019C51E0200677F29 /* Lora-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Regular.ttf"; sourceTree = "<group>"; };
 		B459463119C51E0200677F29 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		B45ED9F519DF032E00D990A3 /* ShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareView.h; sourceTree = "<group>"; };
+		B45ED9F619DF032E00D990A3 /* ShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareView.m; sourceTree = "<group>"; };
+		B46E442019D849290057410C /* IngredientsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngredientsTableViewCell.h; sourceTree = "<group>"; };
+		B46E442119D849290057410C /* IngredientsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientsTableViewCell.m; sourceTree = "<group>"; };
+		B46E442319D84BBC0057410C /* PreparationsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreparationsTableViewCell.h; sourceTree = "<group>"; };
+		B46E442419D84BBC0057410C /* PreparationsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreparationsTableViewCell.m; sourceTree = "<group>"; };
+		B46E442619D89F9D0057410C /* GreenButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GreenButton.h; sourceTree = "<group>"; };
+		B46E442719D89F9D0057410C /* GreenButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GreenButton.m; sourceTree = "<group>"; };
+		B46E442919D8A0D00057410C /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewCell.h; sourceTree = "<group>"; };
+		B46E442A19D8A0D00057410C /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewCell.m; sourceTree = "<group>"; };
+		B46E442C19D8B4B40057410C /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
+		B46E442D19D8B4B40057410C /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
+		B473A4A919D72CDA0020144A /* RecipeDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeDetailTableViewCell.h; sourceTree = "<group>"; };
+		B473A4AA19D72CDA0020144A /* RecipeDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeDetailTableViewCell.m; sourceTree = "<group>"; };
+		B473A4AC19D742BD0020144A /* SeciontTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeciontTableViewCell.h; sourceTree = "<group>"; };
+		B473A4AD19D742BD0020144A /* SeciontTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeciontTableViewCell.m; sourceTree = "<group>"; };
+		B473A4AF19D77E330020144A /* MediaDetailRecipe.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MediaDetailRecipe.xcassets; sourceTree = "<group>"; };
 		B49BE42719D623B400E2FC34 /* CategoryCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCD.h; sourceTree = "<group>"; };
 		B49BE42819D623B400E2FC34 /* CategoryCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCD.m; sourceTree = "<group>"; };
 		B49BE42A19D623B400E2FC34 /* RecipeCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeCD.h; sourceTree = "<group>"; };
 		B49BE42B19D623B400E2FC34 /* RecipeCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeCD.m; sourceTree = "<group>"; };
+		B4A0D78719DE1A760001C411 /* SearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchView.h; sourceTree = "<group>"; };
+		B4A0D78819DE1A760001C411 /* SearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchView.m; sourceTree = "<group>"; };
 		B4A4A79B19BFD83A005AA748 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		B4A4A79D19BFD9FB005AA748 /* OriginData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OriginData.h; sourceTree = "<group>"; };
 		B4A4A79E19BFD9FB005AA748 /* OriginData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OriginData.m; sourceTree = "<group>"; };
@@ -203,6 +242,10 @@
 		B4A4A81019BFDA7A005AA748 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		B4A4A81519BFDD15005AA748 /* WSQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSQuery.h; sourceTree = "<group>"; };
 		B4A4A81619BFDD15005AA748 /* WSQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSQuery.m; sourceTree = "<group>"; };
+		B4A4DC8119D9968400539BB0 /* AlertFlorida.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertFlorida.h; sourceTree = "<group>"; };
+		B4A4DC8219D9968400539BB0 /* AlertFlorida.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertFlorida.m; sourceTree = "<group>"; };
+		B4A4DC8419D9A61800539BB0 /* NoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteView.h; sourceTree = "<group>"; };
+		B4A4DC8519D9A61800539BB0 /* NoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteView.m; sourceTree = "<group>"; };
 		B4AFAAC219BE5DDA00CCC368 /* Florida.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Florida.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4AFAAC519BE5DDA00CCC368 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B4AFAAC719BE5DDA00CCC368 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -331,6 +374,21 @@
 				B459462419C5095500677F29 /* RoundContainerViewLogin.m */,
 				B459462519C5095500677F29 /* SearchTextField.h */,
 				B459462619C5095500677F29 /* SearchTextField.m */,
+				B46E442C19D8B4B40057410C /* MenuView.h */,
+				B46E442D19D8B4B40057410C /* MenuView.m */,
+				B4A4DC8119D9968400539BB0 /* AlertFlorida.h */,
+				B4A4DC8219D9968400539BB0 /* AlertFlorida.m */,
+				B4A4DC8419D9A61800539BB0 /* NoteView.h */,
+				B4A4DC8519D9A61800539BB0 /* NoteView.m */,
+				B453750519DC9D080036CFBD /* BuyListView.h */,
+				B453750619DC9D080036CFBD /* BuyListView.m */,
+				B453750819DCA23C0036CFBD /* IngredientsCheckTableViewCell.h */,
+				B453750919DCA23C0036CFBD /* IngredientsCheckTableViewCell.m */,
+				B453750A19DCA23C0036CFBD /* IngredientsCheckTableViewCell.xib */,
+				B4A0D78719DE1A760001C411 /* SearchView.h */,
+				B4A0D78819DE1A760001C411 /* SearchView.m */,
+				B45ED9F519DF032E00D990A3 /* ShareView.h */,
+				B45ED9F619DF032E00D990A3 /* ShareView.m */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -356,6 +414,26 @@
 				B49BE42819D623B400E2FC34 /* CategoryCD.m */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		B49BE42D19D6382D00E2FC34 /* DetailRecipeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B473A4A919D72CDA0020144A /* RecipeDetailTableViewCell.h */,
+				B473A4AA19D72CDA0020144A /* RecipeDetailTableViewCell.m */,
+				B473A4AC19D742BD0020144A /* SeciontTableViewCell.h */,
+				B473A4AD19D742BD0020144A /* SeciontTableViewCell.m */,
+				B473A4AF19D77E330020144A /* MediaDetailRecipe.xcassets */,
+				B46E442019D849290057410C /* IngredientsTableViewCell.h */,
+				B46E442119D849290057410C /* IngredientsTableViewCell.m */,
+				B46E442319D84BBC0057410C /* PreparationsTableViewCell.h */,
+				B46E442419D84BBC0057410C /* PreparationsTableViewCell.m */,
+				B46E442619D89F9D0057410C /* GreenButton.h */,
+				B46E442719D89F9D0057410C /* GreenButton.m */,
+				B46E442919D8A0D00057410C /* MenuTableViewCell.h */,
+				B46E442A19D8A0D00057410C /* MenuTableViewCell.m */,
+			);
+			path = DetailRecipeViewController;
 			sourceTree = "<group>";
 		};
 		B4A4A79619BFD7A9005AA748 /* Class */ = {
@@ -385,6 +463,7 @@
 		B4A4A79819BFD7A9005AA748 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B49BE42D19D6382D00E2FC34 /* DetailRecipeViewController */,
 				B4B316FA19D3EB8100B946BF /* Fonts */,
 				B459461C19C5095500677F29 /* CustomView */,
 				B406A29519C257A300772A3F /* RecipesViewController */,
@@ -682,6 +761,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = kodebinario;
 				TargetAttributes = {
+					B4AFAAC119BE5DDA00CCC368 = {
+						DevelopmentTeam = VN4KQP4HQR;
+					};
 					B4AFAAE219BE5DDA00CCC368 = {
 						TestTargetID = B4AFAAC119BE5DDA00CCC368;
 					};
@@ -712,9 +794,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4E2D8DB19C20AF600AB2B14 /* MediaRecipes.xcassets in Resources */,
+				B473A4B019D77E330020144A /* MediaDetailRecipe.xcassets in Resources */,
 				B459463519C51E0200677F29 /* Lora-Regular.ttf in Resources */,
 				B459463419C51E0200677F29 /* Lora-Italic.ttf in Resources */,
 				B446555219D24EFD00DDE99D /* MediaHome.xcassets in Resources */,
+				B453750C19DCA23C0036CFBD /* IngredientsCheckTableViewCell.xib in Resources */,
 				B442541319D549FA00E74DBC /* MediaRecipes.xcassets in Resources */,
 				B459463619C51E0200677F29 /* OFL.txt in Resources */,
 				B459463319C51E0200677F29 /* Lora-BoldItalic.ttf in Resources */,
@@ -741,16 +825,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B45ED9F719DF032E00D990A3 /* ShareView.m in Sources */,
 				B406A2C719C25B4100772A3F /* UIButton+WebCache.m in Sources */,
+				B46E442219D849290057410C /* IngredientsTableViewCell.m in Sources */,
+				B473A4AE19D742BD0020144A /* SeciontTableViewCell.m in Sources */,
+				B453750719DC9D080036CFBD /* BuyListView.m in Sources */,
 				B4A4A81119BFDA7A005AA748 /* UIColor+Hex.m in Sources */,
 				B4E2D8D619C1E9A700AB2B14 /* Categories.m in Sources */,
 				B406A29819C257C800772A3F /* RecipesTableViewCell.m in Sources */,
+				B46E442B19D8A0D00057410C /* MenuTableViewCell.m in Sources */,
+				B473A4AB19D72CDA0020144A /* RecipeDetailTableViewCell.m in Sources */,
 				B4A4A7FA19BFDA5F005AA748 /* EZFormTextField.m in Sources */,
 				B406A2CB19C25B4100772A3F /* UIImageView+HighlightedWebCache.m in Sources */,
 				B406A2BF19C25B4100772A3F /* NSData+ImageContentType.m in Sources */,
 				B4A4A7F019BFDA5F005AA748 /* EZFormContinuousField.m in Sources */,
 				B4A4A7F519BFDA5F005AA748 /* EZFormInvalidIndicatorTriangleExclamationView.m in Sources */,
 				B4E2D8C719C12AB400AB2B14 /* kbStoreDataModel.m in Sources */,
+				B453750B19DCA23C0036CFBD /* IngredientsCheckTableViewCell.m in Sources */,
 				B4A4A7F219BFDA5F005AA748 /* EZFormField.m in Sources */,
 				B4A4A7F819BFDA5F005AA748 /* EZFormRadioField.m in Sources */,
 				B4A4A7EE19BFDA5F005AA748 /* EZFormBooleanField.m in Sources */,
@@ -759,18 +850,21 @@
 				B406A2C519C25B4100772A3F /* SDWebImageManager.m in Sources */,
 				B459462819C5095500677F29 /* GrayRoundButton.m in Sources */,
 				B4E2D8C419C12A9400AB2B14 /* ModelFlorida.xcdatamodeld in Sources */,
+				B46E442519D84BBC0057410C /* PreparationsTableViewCell.m in Sources */,
 				B406A2C019C25B4100772A3F /* SDImageCache.m in Sources */,
 				B4A4A7F419BFDA5F005AA748 /* EZFormInputControl.m in Sources */,
 				B406A2C219C25B4100772A3F /* SDWebImageDecoder.m in Sources */,
 				B4A4A7FC19BFDA5F005AA748 /* MBProgressHUD.m in Sources */,
 				B4E2D8D919C1EA2300AB2B14 /* CategoryCell.m in Sources */,
 				B406A2C319C25B4100772A3F /* SDWebImageDownloader.m in Sources */,
+				B46E442819D89F9D0057410C /* GreenButton.m in Sources */,
 				B4A4A7EF19BFDA5F005AA748 /* EZFormCommonValidators.m in Sources */,
 				B406A2C919C25B4100772A3F /* UIImage+MultiFormat.m in Sources */,
 				B4A4A7F919BFDA5F005AA748 /* EZFormStandardInputAccessoryView.m in Sources */,
 				B406A2CA19C25B4100772A3F /* UIImage+WebP.m in Sources */,
 				B459462919C5095500677F29 /* GrayTextField.m in Sources */,
 				B4A4A7FD19BFDA5F005AA748 /* Reachability.m in Sources */,
+				B4A0D78919DE1A760001C411 /* SearchView.m in Sources */,
 				B4AFAADC19BE5DDA00CCC368 /* ViewController.m in Sources */,
 				B4E2D8B619C09B7500AB2B14 /* HomeViewController.m in Sources */,
 				B4E2D8D219C1456300AB2B14 /* LocalData.m in Sources */,
@@ -784,6 +878,8 @@
 				B4A4A79F19BFD9FB005AA748 /* OriginData.m in Sources */,
 				B4A4A7ED19BFDA5F005AA748 /* EZForm.m in Sources */,
 				B406A2C819C25B4100772A3F /* UIImage+GIF.m in Sources */,
+				B4A4DC8619D9A61800539BB0 /* NoteView.m in Sources */,
+				B46E442E19D8B4B40057410C /* MenuView.m in Sources */,
 				B4E2D8C119C0B8B200AB2B14 /* CategoryRecipe.m in Sources */,
 				B459462A19C5095500677F29 /* RoundContainerViewLogin.m in Sources */,
 				B4A4A7F719BFDA5F005AA748 /* EZFormRadioChoiceViewController.m in Sources */,
@@ -794,6 +890,7 @@
 				B4AFAAD619BE5DDA00CCC368 /* AppDelegate.m in Sources */,
 				B406A2C419C25B4100772A3F /* SDWebImageDownloaderOperation.m in Sources */,
 				B4E2D8B919C0A6AB00AB2B14 /* Recipe.m in Sources */,
+				B4A4DC8319D9968400539BB0 /* AlertFlorida.m in Sources */,
 				B4A4A7F119BFDA5F005AA748 /* EZFormDateField.m in Sources */,
 				B406A2CC19C25B4100772A3F /* UIImageView+WebCache.m in Sources */,
 				B4AFAAD219BE5DDA00CCC368 /* main.m in Sources */,
@@ -923,6 +1020,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Florida/Florida-Prefix.pch";
 				INFOPLIST_FILE = "Florida/Florida-Info.plist";
@@ -937,6 +1035,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Florida/Florida-Prefix.pch";
 				INFOPLIST_FILE = "Florida/Florida-Info.plist";

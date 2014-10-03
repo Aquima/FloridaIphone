@@ -11,8 +11,9 @@
 #import "CategoryCD.h"
 #import "Categories.h"
 #import "RecipesViewController.h"
-
-@interface HomeViewController ()<categoriesDelegate,UITextFieldDelegate>{
+#import "SearchView.h"
+#import "MenuView.h"
+@interface HomeViewController ()<categoriesDelegate,UITextFieldDelegate,SearchViewDelegate,MenuViewDelegate>{
     __weak IBOutlet Categories *viewCategories;
     __weak IBOutlet UITextField *itxtSearch;
     __weak IBOutlet UILabel *lblTitle;
@@ -41,6 +42,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.view addSubview:[SearchView sharedInstance].menu];
     for (UILabel*label in listLabels) {
         [label setFont:[UIFont fontWithName:@"Roboto Medium" size:8.0f]];
         [label setTextColor:[UIColor colorWithHexString:@"666666"]];
@@ -49,7 +52,7 @@
     [backgroundLogo setBackgroundColor:[UIColor colorWithHexString:@"007052"]];
     [topView setBackgroundColor:[UIColor colorWithHexString:@"42a221"]];
     [self.view setBackgroundColor:[UIColor colorWithHexString:@"edf5dd"]];
-[lblTitle setFont:[UIFont fontWithName:@"Lora-Regular" size:12.f]];
+    [lblTitle setFont:[UIFont fontWithName:@"Lora-Regular" size:12.f]];
     [lblTitle setTextColor:[UIColor colorWithHexString:@"FFFFFF"]];
   //  [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern"]]];
     [itxtSearch setDelegate:self];
@@ -80,6 +83,7 @@
         NSLog(@"%@ %@",category.idCategory,category.nameCategory);
     }
     recipesCDList = [dataRecipes objectForKey:@"RecipeList"];
+    [OriginData sharedInstance].listRecipesCD=recipesCDList;
     [viewCategories loadData:categoryCDList];
     [viewCategories setDelegate:self];
     [preloadView setHidden:YES];
@@ -110,6 +114,7 @@
                                bundle:NULL] instantiateViewControllerWithIdentifier:@"recipesVC"];
     [viewController setTitleList:currentCategory.nameCategory];
     [viewController setRecipeList:results];
+    [viewController setIsFavorite:NO];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -124,11 +129,6 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:
                               @"title contains[cd] %@",param];
     
-    // commented out old starting point :)
-    //[results addObjectsFromArray:[all filteredArrayUsingPredicate:predicate]];
-    
-    // create a descriptor
-    // this assumes that the results are Key-Value-accessible
     NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"idCategory"
                                                                  ascending:YES];
     //
@@ -139,8 +139,10 @@
                                bundle:NULL] instantiateViewControllerWithIdentifier:@"recipesVC"];
      [viewController setTitleList:[NSString stringWithFormat:@"Resultados de \'%@\'",param]];
     [viewController setRecipeList:results];
+    [viewController setIsFavorite:NO];
     [self.navigationController pushViewController:viewController animated:YES];
 }
+
 /*
 #pragma mark - Navigation
 
@@ -151,16 +153,13 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
 -(IBAction)selectCategoryButton:(UIButton*)sender{
     NSString*idCategory=[NSString stringWithFormat:@"%ld",(long)sender.tag];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:
                               @"idCategory contains[cd] %@",idCategory];
-    
-    // commented out old starting point :)
-    //[results addObjectsFromArray:[all filteredArrayUsingPredicate:predicate]];
-    
-    // create a descriptor
-    // this assumes that the results are Key-Value-accessible
+
     NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"idCategory"
                                                                  ascending:YES];
     //
@@ -173,4 +172,74 @@
     [viewController setRecipeList:results];
     [self.navigationController pushViewController:viewController animated:YES];
 }
+-(IBAction)showSearch:(id)sender{
+    [[SearchView sharedInstance] show:YES];
+    [[SearchView sharedInstance] setDelegate:self];
+}
+-(IBAction)showMenu:(id)sender{
+    [self.view addSubview:[MenuView sharedInstance].menu];
+    [[MenuView sharedInstance] show:YES];
+    [[MenuView sharedInstance] setDelegate:self];
+}
+#pragma mark -SearchViewDelegate   
+-(void)goSearch:(NSString *)param{
+    [self searchRecipes:param];
+}
+#pragma mark - MenuViewDelegate
+-(void)selectShowfavorite{
+    [[MenuView sharedInstance] hide:YES];
+    RecipesViewController*viewController =
+    [[UIStoryboard storyboardWithName:@"Main"
+                               bundle:NULL] instantiateViewControllerWithIdentifier:@"recipesVC"];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:
+                              @"isFavorite == %d",1];
+    
+    // commented out old starting point :)
+    //[results addObjectsFromArray:[all filteredArrayUsingPredicate:predicate]];
+    
+    // create a descriptor
+    // this assumes that the results are Key-Value-accessible
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"idCategory"
+                                                                 ascending:YES];
+    //
+    NSArray *results = [[[OriginData sharedInstance].listRecipesCD filteredArrayUsingPredicate:predicate]
+                        sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];
+    
+    [viewController setRecipeList:results];
+    [viewController setIsFavorite:YES];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+-(void)selectShowBuyList{
+    [[MenuView sharedInstance] hide:YES];
+    RecipesViewController*viewController =
+    [[UIStoryboard storyboardWithName:@"Main"
+                               bundle:NULL] instantiateViewControllerWithIdentifier:@"recipesVC"];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:
+                              @"isBuyList == %d",1];
+    
+    // commented out old starting point :)
+    //[results addObjectsFromArray:[all filteredArrayUsingPredicate:predicate]];
+    
+    // create a descriptor
+    // this assumes that the results are Key-Value-accessible
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"idCategory"
+                                                                 ascending:YES];
+    //
+    NSArray *results = [[[OriginData sharedInstance].listRecipesCD filteredArrayUsingPredicate:predicate]
+                        sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];
+    
+    [viewController setRecipeList:results];
+   // [viewController setIsFavorite:YES];
+    [self.navigationController pushViewController:viewController animated:YES];
+
+}
+-(void)selectShowRecipesPrepareted{
+    [[MenuView sharedInstance] hide:YES];
+}
+-(void)selectendSesion{
+    [[MenuView sharedInstance] hide:YES];
+}
+
 @end

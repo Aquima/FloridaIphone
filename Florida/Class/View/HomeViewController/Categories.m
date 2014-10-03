@@ -35,6 +35,7 @@
     // Drawing code
 }
 */
+
 #pragma mark - collectionView
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)collectionView {
     //_data is a class member variable that contains one array per section.

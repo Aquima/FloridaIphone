@@ -9,8 +9,10 @@
         <attribute name="idCategory" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="idRecipe" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="ingredients" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="isBuyList" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isFavorite" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="nameCategory" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="portions" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="preparation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="ranking" optional="YES" attributeType="String" syncable="YES"/>
@@ -23,6 +25,6 @@
     </entity>
     <elements>
         <element name="CategoryCD" positionX="-63" positionY="-18" width="128" height="73"/>
-        <element name="RecipeCD" positionX="-54" positionY="9" width="128" height="270"/>
+        <element name="RecipeCD" positionX="-54" positionY="9" width="128" height="300"/>
     </elements>
 </model>

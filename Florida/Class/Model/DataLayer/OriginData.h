@@ -13,8 +13,7 @@
     NSURLSession *defaultSession;
 }
 @property BOOL isAvailableConnection;
-@property (nonatomic,strong) NSMutableArray*callCompletedOffLine;
-@property (nonatomic,strong) NSMutableArray*allBenefits;
+@property (nonatomic,strong) NSArray*listRecipesCD;
 @property(nonatomic,strong)CLLocation *myLocation;
 +(OriginData *)sharedInstance;
 

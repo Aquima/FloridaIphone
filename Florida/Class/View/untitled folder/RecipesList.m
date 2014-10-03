@@ -9,7 +9,11 @@
 #import "RecipesList.h"
 #import "RecipeCD.h"
 #import "RecipesTableViewCell.h"
-@implementation RecipesList
+@implementation RecipesList{
+    RecipeCD*currentRecipeCD;
+    NSIndexPath *currentIndex;
+    BOOL isFavorite;
+}
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -28,8 +32,12 @@
     // Drawing code
 }
 */
+-(void)deleteFavorite{
+    [data removeObjectAtIndex:currentIndex.row];
+    [tblRecipes deleteRowsAtIndexPaths:@[currentIndex] withRowAnimation:UITableViewRowAnimationFade];
+}
 -(void)initWithData:(NSArray*)recipes{
-    data=recipes;
+    data=[[NSMutableArray alloc] initWithArray:recipes];
     tblRecipes.dataSource=self;
     tblRecipes.delegate=self;
     [tblRecipes reloadData];
@@ -82,5 +90,43 @@
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
     
 }
-
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        currentIndex=indexPath;
+        currentRecipeCD=[data objectAtIndex:indexPath.row];
+      /*  [[OriginData sharedInstance].arrayCurrentMyCart removeObjectAtIndex:indexPath.row];
+        [products removeObjectAtIndex:indexPath.row];
+        // Delete the row from the data source
+        [tabBar.viewBadge.lblTitle setText:[NSString stringWithFormat:@"%d",[[OriginData sharedInstance].arrayCurrentMyCart count]]];
+        if ([products count]>0) {
+            [imgMessage setHidden:YES];
+        }else{
+            [imgMessage setHidden:NO];
+        }
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];*/
+        [self.delegate showAlert];
+    }
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }
+}
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    RecipesTableViewCell *cell =(RecipesTableViewCell*) [tableView cellForRowAtIndexPath:indexPath];
+    //[UIColor colorWithHexString:@"007dc3"];
+    //[cell.viewDelete setBackgroundColor:[UIColor colorWithHexString:@"fe3a30"]];
+  //--  [cell.viewDelete setBackgroundColor:[UIColor colorWithHexString:@"007dc3"]];
+    //  [cell setBackgroundColor:[UIColor redColor]];
+    // set frames for all content you have got for that cell
+    
+    UITableViewCellEditingStyle style = UITableViewCellEditingStyleDelete;
+    if (self.isFavorite==YES) {
+        return style;
+    }else{
+        return style=UITableViewCellEditingStyleNone;
+    }
+    
+    
+}
 @end

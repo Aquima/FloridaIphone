@@ -31,10 +31,10 @@
 {
     // Drawing code
     [[self layer] setMasksToBounds:NO];
-    UIColor *fillColor = [UIColor colorWithHexString:@"aca7a4"];
+    UIColor *fillColor = [UIColor colorWithHexString:@"ffffff"];
     [fillColor setFill];
     // [self setBackgroundColor:[UIColor clearColor]];
-    UIColor *strokeColor =[UIColor colorWithHexString:@"aca7a4"];
+    UIColor *strokeColor =[UIColor colorWithHexString:@"ffffff"];
     [strokeColor setStroke];
     float corner=0.0;
     
@@ -54,12 +54,12 @@
     [aPath fill];
     [aPath stroke];
     
-    [[self layer] setCornerRadius:17.5f];
+    [[self layer] setCornerRadius:3.f];
     [[self layer] setMasksToBounds:YES];
-    
+    [self setFont:[UIFont fontWithName:@"Roboto-Medium" size:12.f]];
     if ([self respondsToSelector:@selector(setAttributedPlaceholder:)]) {
-        UIColor *color = [UIColor colorWithHexString:@"4f4744"];
-        self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.placeholder attributes:@{NSForegroundColorAttributeName: color}];
+        UIColor *color = [UIColor lightGrayColor];
+        self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Buscar Receta" attributes:@{NSForegroundColorAttributeName: color}];
     } else {
         NSLog(@"Cannot set placeholder text's color, because deployment target is earlier than iOS 6.0");
         // TODO: Add fall-back code to set placeholder color.

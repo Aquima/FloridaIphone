@@ -23,8 +23,6 @@
 }
 -(id)init
 {
-    self.allBenefits = [[NSMutableArray alloc] init];
-    self.callCompletedOffLine=[[NSMutableArray alloc] init];
     
     defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
     defaultSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: nil delegateQueue: [NSOperationQueue mainQueue]];

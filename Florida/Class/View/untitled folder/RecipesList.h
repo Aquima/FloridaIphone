@@ -9,12 +9,15 @@
 #import <UIKit/UIKit.h>
 @protocol recipeListDelegate
 -(void)selectRecipe:(id)recipe;
+-(void)showAlert;
 @end
 @interface RecipesList : UIView<UITableViewDataSource,UITableViewDelegate>{
-    NSArray*data;
+    NSMutableArray*data;
     __weak IBOutlet UITableView*tblRecipes;
 }
 @property(nonatomic,weak)id<recipeListDelegate>delegate;
+@property BOOL isFavorite;
 -(void)initWithData:(NSArray*)recipes;
 -(void)reloadData;
+-(void)deleteFavorite;
 @end
