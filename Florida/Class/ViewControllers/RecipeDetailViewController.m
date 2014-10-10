@@ -20,8 +20,9 @@
 #import "BuyListView.h"
 #import "GreenButton.h"
 #import "ShareView.h"
+#import "MBProgressHUD.h"
 @import Social;
-@interface RecipeDetailViewController ()<MenuTableViewCellDelegate,MenuViewDelegate,NoteViewDelegate,BuyListViewDelegate,ShareViewDelegate>
+@interface RecipeDetailViewController ()<MenuTableViewCellDelegate,MenuViewDelegate,NoteViewDelegate,BuyListViewDelegate,ShareViewDelegate,RecipeDetailTableViewCellDelegate>
 {
     
  
@@ -30,6 +31,9 @@
     __weak IBOutlet UIView *superTopView;
     NSArray*ingredients;
     NSString*message;
+    MBProgressHUD *progress;
+  
+
 }
 @end
 
@@ -47,6 +51,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    progress = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:progress];
+    progress.mode = MBProgressHUDModeIndeterminate;
     [self.view addSubview:[BuyListView sharedInstance].menu];
     [self.view addSubview:[NoteView sharedInstance].menu];
     [[NoteView sharedInstance] setDelegate:self];
@@ -140,6 +147,7 @@
                         reuseIdentifier:identifier];
             }
             [recipeDetail loadWithRecipe:recipe];
+            [recipeDetail setDelegate:self];
             return recipeDetail;
             break;
         case 1:
@@ -388,7 +396,7 @@
 }
 #pragma mark - ShareViewDelegate
 -(void)selectTwitterWith:(NSString*)message{
-    
+    [progress show:YES];
     SLComposeViewController *tweetSheet = [SLComposeViewController
                                            composeViewControllerForServiceType:SLServiceTypeTwitter];
     [tweetSheet setInitialText:[NSString stringWithFormat:@"%@",recipe.url_share]];
@@ -398,9 +406,10 @@
     [tweetSheet addImage:image];
 
     [self presentViewController:tweetSheet animated:YES completion:nil];
- 
+ [progress hide:YES];
 }
 -(void)selectFacebookWith:(NSString*)message{
+     [progress show:YES];
     SLComposeViewController *facebookSheet = [SLComposeViewController
                                               composeViewControllerForServiceType:SLServiceTypeFacebook];
     
@@ -410,5 +419,10 @@
     UIImage*image=[[UIImage alloc] initWithData:imageData];
     [facebookSheet addImage:image];
     [self presentViewController:facebookSheet animated:YES completion:nil];
+    [progress hide:YES];
+}
+#pragma mark- RecipeDetailTableViewCellDelegate
+-(void)loadVideo{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: recipe.urlVideo]];
 }
 @end

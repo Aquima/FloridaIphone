@@ -74,12 +74,52 @@
        
        NSMutableArray*ingredientesCompuesto=[[NSMutableArray alloc] init];
         for (NSString*ingrediente in ingredients) {
-            NSArray*index=[[NSArray alloc] initWithObjects:ingrediente,@"0", nil];
-            [ingredientesCompuesto addObject:index];
+            NSString*ingredients =[ingrediente stringByReplacingOccurrencesOfString:@"&uacute;" withString:@"ú"];
+            ingredients =[ingredients stringByReplacingOccurrencesOfString:@"&aacute;" withString:@"á"];
+            ingredients =[ingredients stringByReplacingOccurrencesOfString:@"&oacute;" withString:@"ó"];
+            ingredients =[ingredients stringByReplacingOccurrencesOfString:@"&eacute;" withString:@"é"];
+            ingredients =[ingredients stringByReplacingOccurrencesOfString:@"&iacute;" withString:@"í"];
+            ingredients =[ingredients stringByReplacingOccurrencesOfString:@"&uacute;" withString:@"ú"];
+            ingredients=[ingredients stringByReplacingOccurrencesOfString:@"<span style=\"text-decoration: underline;\">" withString:@""];
+            ingredients=[ingredients stringByReplacingOccurrencesOfString:@"</span>" withString:@""];
+             ingredients=[ingredients stringByReplacingOccurrencesOfString:@"&ntilde;" withString:@"ñ"];
+            ingredients=[ingredients stringByReplacingOccurrencesOfString:@"&frac12;" withString:@"½"];
+             ingredients=[ingredients stringByReplacingOccurrencesOfString:@"&frac14;" withString:@"¼"];
+            ingredients=[ingredients stringByReplacingOccurrencesOfString:@"&frac18;" withString:@"⅛"];
+            ingredients=[ingredients stringByReplacingOccurrencesOfString:@"&ordm;" withString:@"º"];
+
+            
+            NSArray*index=[[NSArray alloc] initWithObjects:ingredients,@"0", nil];
+            if (![ingredients isEqualToString:@""]) {
+                 [ingredientesCompuesto addObject:index];
+            }
+           
         }
          NSData *arrayData = [NSKeyedArchiver archivedDataWithRootObject:ingredientesCompuesto];
-        recipeCD.ingredients=arrayData;//[NSString stringWithFormat:@"%@",stringIngredients];
-        recipeCD.preparation=[NSString stringWithFormat:@"%@",[response objectForKey:@"preparation"]];
+        recipeCD.ingredients=arrayData;//[NSString stringWithFormat:@"%@",stringIngredients]; NSASCIIStringEncoding
+        
+        NSData *stringData = [[response objectForKey:@"preparation"] dataUsingEncoding: NSASCIIStringEncoding allowLossyConversion: YES];
+        NSString *cleanString = [[NSString alloc] initWithData: stringData encoding: NSASCIIStringEncoding];
+     
+        cleanString =[cleanString stringByReplacingOccurrencesOfString:@"&aacute;" withString:@"á"];
+        cleanString =[cleanString stringByReplacingOccurrencesOfString:@"&oacute;" withString:@"ó"];
+        cleanString =[cleanString stringByReplacingOccurrencesOfString:@"&eacute;" withString:@"é"];
+        cleanString =[cleanString stringByReplacingOccurrencesOfString:@"&iacute;" withString:@"í"];
+        cleanString =[cleanString stringByReplacingOccurrencesOfString:@"&uacute;" withString:@"ú"];
+        cleanString=[cleanString stringByReplacingOccurrencesOfString:@"&uacute;" withString:@"ú"];
+        cleanString=[cleanString stringByReplacingOccurrencesOfString:@"<span style=\"text-decoration: underline;\">" withString:@""];
+        cleanString=[cleanString stringByReplacingOccurrencesOfString:@"</span>" withString:@""];
+        cleanString=[cleanString stringByReplacingOccurrencesOfString:@"&ntilde;" withString:@"ñ"];
+        cleanString=[cleanString stringByReplacingOccurrencesOfString:@"&frac12;" withString:@"½"];
+        cleanString=[cleanString stringByReplacingOccurrencesOfString:@"&frac14;" withString:@"¼"];
+        cleanString=[cleanString stringByReplacingOccurrencesOfString:@"&frac18;" withString:@"⅛"];
+        cleanString=[cleanString stringByReplacingOccurrencesOfString:@"&ordm;" withString:@"º"];
+        //"<span style=\"text-decoration: underline;\">Vinagreta dulce</span>",
+        NSString* str = [NSString stringWithUTF8String:[cleanString cStringUsingEncoding:NSUTF8StringEncoding]];
+        NSLog(@"%@", str);
+        
+     //   NSString *correctString =[NSString stringWithUTF8String:cleanString];
+        recipeCD.preparation=cleanString;//[NSString stringWithFormat:@"%s",[[response objectForKey:@"preparation"] UTF8String]];
         recipeCD.syncComplete=@1;
         recipeCD.isBuyList=@0;
         [LocalData grabarCambiosDeObjeto:recipeCD];

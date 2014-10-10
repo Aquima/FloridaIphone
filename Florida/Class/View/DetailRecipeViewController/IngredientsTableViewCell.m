@@ -25,5 +25,25 @@
 
     [imgIcon setImage:[UIImage imageNamed:icon]];
     [lblTitle setText:title];
+  //  [self setHtml:title];
 }
+- (void) setHtml: (NSString*) html
+{
+    
+    UIFont *font = [UIFont fontWithName:@"Roboto-Medium" size:11.0f];
+  //  NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:font
+                                                                //forKey:NSFontAttributeName];
+  //  NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:@"strigil" attributes:attrsDictionary];
+    
+    NSError *err = nil;
+    lblTitle.attributedText =
+    [[NSAttributedString alloc]
+     initWithData: [html dataUsingEncoding:NSUTF8StringEncoding]
+     options: @{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType ,NSFontAttributeName:font}
+     documentAttributes: nil
+     error: &err];
+    if(err)
+        NSLog(@"Unable to parse label text: %@", err);
+}
+
 @end

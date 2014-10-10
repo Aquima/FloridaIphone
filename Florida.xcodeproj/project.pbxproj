@@ -99,7 +99,7 @@
 		B4E2D8D219C1456300AB2B14 /* LocalData.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E2D8D119C1456300AB2B14 /* LocalData.m */; };
 		B4E2D8D619C1E9A700AB2B14 /* Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E2D8D519C1E9A700AB2B14 /* Categories.m */; };
 		B4E2D8D919C1EA2300AB2B14 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E2D8D819C1EA2300AB2B14 /* CategoryCell.m */; };
-		B4E2D8DB19C20AF600AB2B14 /* MediaRecipes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4E2D8DA19C20AF600AB2B14 /* MediaRecipes.xcassets */; };
+		B4E2D8DB19C20AF600AB2B14 /* MediaAllRecipes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4E2D8DA19C20AF600AB2B14 /* MediaAllRecipes.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -283,7 +283,7 @@
 		B4E2D8D519C1E9A700AB2B14 /* Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Categories.m; sourceTree = "<group>"; };
 		B4E2D8D719C1EA2300AB2B14 /* CategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCell.h; sourceTree = "<group>"; };
 		B4E2D8D819C1EA2300AB2B14 /* CategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCell.m; sourceTree = "<group>"; };
-		B4E2D8DA19C20AF600AB2B14 /* MediaRecipes.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MediaRecipes.xcassets; sourceTree = "<group>"; };
+		B4E2D8DA19C20AF600AB2B14 /* MediaAllRecipes.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MediaAllRecipes.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -468,7 +468,7 @@
 				B459461C19C5095500677F29 /* CustomView */,
 				B406A29519C257A300772A3F /* RecipesViewController */,
 				B4E2D8D319C1E85600AB2B14 /* HomeViewController */,
-				B4E2D8DA19C20AF600AB2B14 /* MediaRecipes.xcassets */,
+				B4E2D8DA19C20AF600AB2B14 /* MediaAllRecipes.xcassets */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -793,7 +793,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4E2D8DB19C20AF600AB2B14 /* MediaRecipes.xcassets in Resources */,
+				B4E2D8DB19C20AF600AB2B14 /* MediaAllRecipes.xcassets in Resources */,
 				B473A4B019D77E330020144A /* MediaDetailRecipe.xcassets in Resources */,
 				B459463519C51E0200677F29 /* Lora-Regular.ttf in Resources */,
 				B459463419C51E0200677F29 /* Lora-Italic.ttf in Resources */,
@@ -1021,6 +1021,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Florida/Florida-Prefix.pch";
 				INFOPLIST_FILE = "Florida/Florida-Info.plist";
@@ -1036,6 +1040,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Florida/Florida-Prefix.pch";
 				INFOPLIST_FILE = "Florida/Florida-Info.plist";

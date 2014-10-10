@@ -39,7 +39,15 @@
     menu=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 568)];
     
     [menu setHidden:YES];
-    UIView*contentOptions=[[UIView alloc] initWithFrame:CGRectMake(25, 173, 270, 141)];
+    UIView*contentOptions;//=[[UIView alloc] initWithFrame:CGRectMake(25, 173, 270, 141)];
+    if( [self isIphone5] ){
+        NSLog(@"Iphone4");
+        contentOptions=[[UIView alloc] initWithFrame:CGRectMake(25, 64, 270, 141)];
+    }
+    else{
+        NSLog(@"Iphone5");
+        contentOptions=[[UIView alloc] initWithFrame:CGRectMake(25, 173, 270, 141)];
+    }
     [contentOptions setBackgroundColor:[UIColor whiteColor]];
     UIImageView*topBarGold = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 270, 4)] ;
     [topBarGold setImage:[UIImage imageNamed:@"linea_degradado"]];
@@ -74,7 +82,16 @@
     [contentOptions addSubview:note];
     [menu addSubview:shadow];
     [menu addSubview:contentOptions];
+   
     return self;
+}
+-(BOOL)isIphone5{
+    if (( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < 468) {
+        return TRUE;
+    }else{
+        return FALSE;
+    }
+
 }
 -(IBAction)selectorBtn:(UIButton*)sender{
     [note resignFirstResponder];

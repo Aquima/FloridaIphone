@@ -28,4 +28,16 @@
     lblPreparation.frame=CGRectMake(10, 0, 300, (numberLines*9)+10);
     [lblPreparation setText:preparation];
 }
+- (void) setHtml: (NSString*) html
+{
+    NSError *err = nil;
+    lblPreparation.attributedText =
+    [[NSAttributedString alloc]
+     initWithData: [html dataUsingEncoding:NSUTF8StringEncoding]
+     options: @{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType }
+     documentAttributes: nil
+     error: &err];
+    if(err)
+        NSLog(@"Unable to parse label text: %@", err);
+}
 @end

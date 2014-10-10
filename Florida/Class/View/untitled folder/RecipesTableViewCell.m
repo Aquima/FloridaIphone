@@ -90,10 +90,12 @@
     for (UIButton*btnStar in btnRanking) {
         
         if (i<[recipeCD.ranking intValue]) {
-            [btnStar setHidden:NO];
+            [btnStar setImage:[UIImage imageNamed:@"stars"] forState:UIControlStateNormal];
         }else{
-            [btnStar setHidden:YES];
+            //[btnStar setHidden:YES];
+            [btnStar setImage:[UIImage imageNamed:@"starsOf"] forState:UIControlStateNormal];
         }
+
         i++;
     }
 

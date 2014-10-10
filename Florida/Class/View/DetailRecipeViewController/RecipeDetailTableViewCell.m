@@ -10,7 +10,6 @@
 #import "RecipeCD.h"
 #import "UIImageView+WebCache.h"
 @implementation RecipeDetailTableViewCell
-
 - (void)awakeFromNib {
     // Initialization code
 }
@@ -65,22 +64,26 @@
     //  [self.lblInfo setText:@"20% de descuento en tu entrada de martes a jueves."];
     [lblTitle setText:recipeCD.title];
     if ([recipeCD.hasVideo isEqualToString:@"0"]) {
-        [imgHasVideo setHidden:YES];
+        [btnHasVideo setHidden:YES];
     }else{
-        [imgHasVideo setHidden:NO];
+        [btnHasVideo setHidden:NO];
     }
     NSLog(@"%d",[recipeCD.ranking intValue]);
     int i=0;
     for (UIButton*btnStar in btnRanking) {
         
         if (i<[recipeCD.ranking intValue]) {
-            [btnStar setHidden:NO];
+            //[btnStar setHidden:NO];
+            [btnStar setImage:[UIImage imageNamed:@"stars"] forState:UIControlStateNormal];
         }else{
-            [btnStar setHidden:YES];
+            //[btnStar setHidden:YES];
+            [btnStar setImage:[UIImage imageNamed:@"starsOf"] forState:UIControlStateNormal];
         }
         i++;
     }
     
 }
-
+-(IBAction)goVideo:(id)sender{
+    [self.delegate loadVideo];
+}
 @end

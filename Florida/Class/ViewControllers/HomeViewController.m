@@ -57,6 +57,7 @@
   //  [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern"]]];
     [itxtSearch setDelegate:self];
     NSUserDefaults*infoUser=[NSUserDefaults standardUserDefaults];
+ 
     if ([infoUser objectForKey:@"syncComplete"]==nil) {
         [self performSelector:@selector(consult) withObject:nil afterDelay:1.5];
     }else{

@@ -53,14 +53,7 @@
   //  [[self layer] setCornerRadius:5.5f];
     [[self layer] setMasksToBounds:YES];
     
-    if ([self respondsToSelector:@selector(setAttributedPlaceholder:)]) {
-        UIColor *color = [UIColor colorWithHexString:@"92857f"];
-        self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.placeholder attributes:@{NSForegroundColorAttributeName: color}];
-    } else {
-        NSLog(@"Cannot set placeholder text's color, because deployment target is earlier than iOS 6.0");
-        // TODO: Add fall-back code to set placeholder color.
-    }
-    
+      
 }
 - (CGRect)textRectForBounds:(CGRect)bounds {
     return CGRectMake(bounds.origin.x + 10, bounds.origin.y + 8,
