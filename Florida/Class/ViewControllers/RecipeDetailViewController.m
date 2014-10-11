@@ -285,15 +285,19 @@
 -(void)addFavorites:(id)sender{
     BOOL isFavorite = [[recipe isFavorite] boolValue];
     if (isFavorite==NO) {
-        recipe.isFavorite=@1;
-        [LocalData grabarCambiosDeObjeto:recipe];
-          [sender setImage:[UIImage imageNamed:@"menu2B"] forState:UIControlStateNormal];
+ 
+        btnCurrentFavorite=(UIButton*)sender;
+        [self.view addSubview:[AlertFlorida sharedInstance].menu];
+        [[AlertFlorida sharedInstance] show:YES];
+        [[AlertFlorida sharedInstance] setDelegate:self];
+        [[AlertFlorida sharedInstance] setMessageAlert:@"Se Agrego a Favoritos" withOk:YES];
     }else{
         btnCurrentFavorite=(UIButton*)sender;
          [self.view addSubview:[AlertFlorida sharedInstance].menu];
         [[AlertFlorida sharedInstance] show:YES];
         [[AlertFlorida sharedInstance] setDelegate:self];
-       
+        [[AlertFlorida sharedInstance] setMessageAlert:@"¿Estás seguro de eliminar de tu lista de favoritos?" withOk:NO];
+        //@"¿Estás seguro de eliminar de tu lista de favoritos?"
     }
 }
 
@@ -437,6 +441,12 @@
      [[AlertFlorida sharedInstance] hide:YES];
 }
 -(void)selectCancel{
+    [[AlertFlorida sharedInstance] hide:YES];
+}
+-(void)selectOk{
+    recipe.isFavorite=@1;
+    [LocalData grabarCambiosDeObjeto:recipe];
+    [btnCurrentFavorite setImage:[UIImage imageNamed:@"menu2B"] forState:UIControlStateNormal];
     [[AlertFlorida sharedInstance] hide:YES];
 }
 @end
