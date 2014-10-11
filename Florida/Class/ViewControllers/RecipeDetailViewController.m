@@ -21,8 +21,9 @@
 #import "GreenButton.h"
 #import "ShareView.h"
 #import "MBProgressHUD.h"
+#import "AlertFlorida.h"
 @import Social;
-@interface RecipeDetailViewController ()<MenuTableViewCellDelegate,MenuViewDelegate,NoteViewDelegate,BuyListViewDelegate,ShareViewDelegate,RecipeDetailTableViewCellDelegate>
+@interface RecipeDetailViewController ()<MenuTableViewCellDelegate,MenuViewDelegate,NoteViewDelegate,BuyListViewDelegate,ShareViewDelegate,RecipeDetailTableViewCellDelegate,AlertFloridaDelegate>
 {
     
  
@@ -32,7 +33,7 @@
     NSArray*ingredients;
     NSString*message;
     MBProgressHUD *progress;
-  
+    UIButton*btnCurrentFavorite;
 
 }
 @end
@@ -54,6 +55,7 @@
     progress = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
     [self.navigationController.view addSubview:progress];
     progress.mode = MBProgressHUDModeIndeterminate;
+    [self.view addSubview:[AlertFlorida sharedInstance].menu];
     [self.view addSubview:[BuyListView sharedInstance].menu];
     [self.view addSubview:[NoteView sharedInstance].menu];
     [[NoteView sharedInstance] setDelegate:self];
@@ -287,9 +289,11 @@
         [LocalData grabarCambiosDeObjeto:recipe];
           [sender setImage:[UIImage imageNamed:@"menu2B"] forState:UIControlStateNormal];
     }else{
-        recipe.isFavorite=@0;
-        [LocalData grabarCambiosDeObjeto:recipe];
-        [sender setImage:[UIImage imageNamed:@"menu3"] forState:UIControlStateNormal];
+        btnCurrentFavorite=(UIButton*)sender;
+         [self.view addSubview:[AlertFlorida sharedInstance].menu];
+        [[AlertFlorida sharedInstance] show:YES];
+        [[AlertFlorida sharedInstance] setDelegate:self];
+       
     }
 }
 
@@ -424,5 +428,15 @@
 #pragma mark- RecipeDetailTableViewCellDelegate
 -(void)loadVideo{
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString: recipe.urlVideo]];
+}
+#pragma mark - AlertViewDelegate
+-(void)selectDelete{
+    recipe.isFavorite=@0;
+    [LocalData grabarCambiosDeObjeto:recipe];
+    [btnCurrentFavorite setImage:[UIImage imageNamed:@"menu3"] forState:UIControlStateNormal];
+     [[AlertFlorida sharedInstance] hide:YES];
+}
+-(void)selectCancel{
+    [[AlertFlorida sharedInstance] hide:YES];
 }
 @end

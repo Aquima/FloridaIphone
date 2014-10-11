@@ -152,11 +152,14 @@
 }
 -(void)showAlert{
     [self.view addSubview:[AlertFlorida sharedInstance].menu];
+    [[AlertFlorida sharedInstance] setDelegate:self];
     [[AlertFlorida sharedInstance] show:YES];
 }
 #pragma mark - AlertFlorida
 -(void)selectCancel{
     [[AlertFlorida sharedInstance] hide:YES];
+    
+    
 }
 -(void)selectDelete{
     [[AlertFlorida sharedInstance] hide:YES];

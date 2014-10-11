@@ -53,7 +53,19 @@
     menu=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 568)];
     [menu setHidden:YES];
     
-    UIView*contentOptions=[[UIView alloc] initWithFrame:CGRectMake(18, 84, 284, 400)];
+    UIView*contentOptions;
+    CGRect screenBound = [[UIScreen mainScreen] bounds];
+    CGSize screenSize = screenBound.size;
+    CGFloat screenHeight = screenSize.height;
+    if( screenHeight==568 ){
+   
+        NSLog(@"Iphone5");
+        contentOptions=[[UIView alloc] initWithFrame:CGRectMake(18, 84, 284, 400)];
+    }
+    else{
+        NSLog(@"Iphone4");
+        contentOptions=[[UIView alloc] initWithFrame:CGRectMake(18, 34, 284, 400)];
+    }
     [contentOptions setBackgroundColor:[UIColor whiteColor]];
     UIView * greenView=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 284, 42)];
     [greenView setBackgroundColor:[UIColor colorWithHexString:@"42A221"]];
@@ -111,6 +123,7 @@
     [menu addSubview:contentOptions];
     return self;
 }
+
 -(IBAction)selectorBtn:(UIButton*)sender{
     [note resignFirstResponder];
     switch (sender.tag) {

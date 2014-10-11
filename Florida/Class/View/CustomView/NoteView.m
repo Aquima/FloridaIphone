@@ -40,13 +40,17 @@
     
     [menu setHidden:YES];
     UIView*contentOptions;//=[[UIView alloc] initWithFrame:CGRectMake(25, 173, 270, 141)];
-    if( [self isIphone5] ){
-        NSLog(@"Iphone4");
-        contentOptions=[[UIView alloc] initWithFrame:CGRectMake(25, 64, 270, 141)];
-    }
-    else{
+    CGRect screenBound = [[UIScreen mainScreen] bounds];
+    CGSize screenSize = screenBound.size;
+    CGFloat screenHeight = screenSize.height;
+    if( screenHeight==568 ){
+        
         NSLog(@"Iphone5");
         contentOptions=[[UIView alloc] initWithFrame:CGRectMake(25, 173, 270, 141)];
+    }
+    else{
+        NSLog(@"Iphone4");
+        contentOptions=[[UIView alloc] initWithFrame:CGRectMake(25, 64, 270, 141)];
     }
     [contentOptions setBackgroundColor:[UIColor whiteColor]];
     UIImageView*topBarGold = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 270, 4)] ;
