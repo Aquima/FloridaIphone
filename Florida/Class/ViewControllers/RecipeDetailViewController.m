@@ -290,7 +290,7 @@
         [self.view addSubview:[AlertFlorida sharedInstance].menu];
         [[AlertFlorida sharedInstance] show:YES];
         [[AlertFlorida sharedInstance] setDelegate:self];
-        [[AlertFlorida sharedInstance] setMessageAlert:@"Se Agrego a Favoritos" withOk:YES];
+        [[AlertFlorida sharedInstance] setMessageAlert:@"La receta se agregó a favoritos." withOk:YES];
     }else{
         btnCurrentFavorite=(UIButton*)sender;
          [self.view addSubview:[AlertFlorida sharedInstance].menu];
