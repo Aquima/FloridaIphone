@@ -166,6 +166,9 @@
     [[AlertFlorida sharedInstance] hide:YES];
     [viewRecipesList deleteFavorite];
 }
+-(void)selectOk{
+    [[AlertFlorida sharedInstance] hide:YES];
+}
 #pragma mark - MenuViewDelegate
 -(void)selectShowfavorite{
      [[MenuView sharedInstance] hide:YES];
