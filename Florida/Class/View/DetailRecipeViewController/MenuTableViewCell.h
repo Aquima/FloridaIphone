@@ -12,7 +12,7 @@
 @protocol MenuTableViewCellDelegate
 -(void)addNote;
 -(void)addBuyList;
--(void)addFavorites:(id)sender;
+-(void)addFavorites:(id)sender withLabel:(id)label;
 -(void)share;
 @end
 @interface MenuTableViewCell : UITableViewCell
@@ -21,6 +21,7 @@
 @property(nonatomic,weak)IBOutlet GreenButton*btnAddNote;
 @property(nonatomic,weak)IBOutlet GreenButton*btnBuyList;
 @property(nonatomic,weak)IBOutlet GreenButton*btnShare;
+@property(nonatomic,weak)IBOutlet UILabel*addFavorite;
 -(void)loadData:(RecipeCD*)recipe;
 -(void)isBuyList:(BOOL)isBuyList;
 @end
