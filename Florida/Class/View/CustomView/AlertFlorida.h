@@ -10,6 +10,7 @@
 @protocol AlertFloridaDelegate
 -(void)selectDelete;
 -(void)selectCancel;
+-(void)selectOk;
 @end
 @interface AlertFlorida : UIView
 @property(nonatomic,weak)id<AlertFloridaDelegate>delegate;
@@ -17,5 +18,5 @@
 +(AlertFlorida *)sharedInstance;
 -(void)hide:(BOOL)hide;
 -(void)show:(BOOL)show;
-
+-(void)setMessageAlert:(NSString*)messageString withOk:(BOOL)ok;
 @end

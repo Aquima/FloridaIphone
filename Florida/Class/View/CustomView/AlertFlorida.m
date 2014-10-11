@@ -10,7 +10,11 @@
 
 @implementation AlertFlorida
 {
-
+    UILabel*message;
+    UIButton*btnActionCancel;
+    UIButton*btnAction;
+    UIButton*btnOK;
+    UIButton*shadow;
 }
 @synthesize menu;
 /*
@@ -32,7 +36,7 @@
 
 -(id)init
 {
-    UIButton*shadow=[[UIButton alloc] initWithFrame:CGRectMake(0, 0, 320, 568)];
+    shadow=[[UIButton alloc] initWithFrame:CGRectMake(0, 0, 320, 568)];
     [shadow setBackgroundColor:[UIColor colorWithHexString:@"000000"]];
     shadow.alpha=0.6;
     shadow.tag=4;
@@ -58,7 +62,7 @@
     UIImageView*topBarGold = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 270, 4)] ;
     [topBarGold setImage:[UIImage imageNamed:@"linea_degradado"]];
     [contentOptions addSubview:topBarGold];
-    UIButton*btnAction=[[UIButton alloc] initWithFrame:CGRectMake(135, 92, 135, 49)];
+    btnAction=[[UIButton alloc] initWithFrame:CGRectMake(135, 92, 135, 49)];
     [btnAction setBackgroundColor:[UIColor colorWithHexString:@"339933"]];
     [btnAction setTag:0];
     [btnAction setTitle:@"Aceptar"  forState:UIControlStateNormal];
@@ -68,44 +72,60 @@
     //  [btnAction.titleLabel setTextColor:[UIColor colorWithHexString:@"333333"]];
     [contentOptions addSubview:btnAction];
     
-    UIButton*btnActionCancel=[[UIButton alloc] initWithFrame:CGRectMake(0, 92, 135, 49)];
+    btnActionCancel=[[UIButton alloc] initWithFrame:CGRectMake(0, 92, 135, 49)];
     [btnActionCancel setBackgroundColor:[UIColor colorWithHexString:@"ededed"]];
     [btnActionCancel setTag:1];
     [btnActionCancel setTitle:@"Cancelar"  forState:UIControlStateNormal];
     [btnActionCancel.titleLabel setFont:[UIFont fontWithName:@"Roboto-Medium" size:12.f]];
     [btnActionCancel setTitleColor:[UIColor colorWithHexString:@"333333"] forState:UIControlStateNormal];
     [btnActionCancel addTarget:self action:@selector(selectorBtn:) forControlEvents:UIControlEventTouchUpInside];
-    //  [btnAction.titleLabel setTextColor:[UIColor colorWithHexString:@"333333"]];
     [contentOptions addSubview:btnActionCancel];
+    btnOK=[[UIButton alloc] initWithFrame:CGRectMake(67.5, 87, 135, 49)];
+    [btnOK setBackgroundColor:[UIColor colorWithHexString:@"339933"]];
+    [btnOK setTag:2];
+    [btnOK setTitle:@"OK"  forState:UIControlStateNormal];
+    [btnOK.titleLabel setFont:[UIFont fontWithName:@"Roboto-Medium" size:12.f]];
+    [btnOK setTitleColor:[UIColor colorWithHexString:@"ffffff"] forState:UIControlStateNormal];
+    [btnOK addTarget:self action:@selector(selectorBtn:) forControlEvents:UIControlEventTouchUpInside];
+
+    //  [btnAction.titleLabel setTextColor:[UIColor colorWithHexString:@"333333"]];
+    [contentOptions addSubview:btnOK];
     
-    UILabel*message=[[UILabel alloc] initWithFrame:CGRectMake(35, 30, 200, 36)];
+    message=[[UILabel alloc] initWithFrame:CGRectMake(35, 30, 200, 36)];
     [message setTextColor:[UIColor colorWithHexString:@"333333"]];
     [message setFont:[UIFont fontWithName:@"Roboto-Medium" size:12.f]];
     [message setLineBreakMode:NSLineBreakByWordWrapping];
     [message setTextAlignment:NSTextAlignmentCenter];
     [message setNumberOfLines:2];
-    [message setText:@"¿Estás seguro de eliminar de tu lista de favoritos?"];
     [contentOptions addSubview:message];
     [menu addSubview:shadow];
     [menu addSubview:contentOptions];
     return self;
 }
--(BOOL)isIphone5{
-    if (( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < 468) {
-        return TRUE;
+-(void)setMessageAlert:(NSString*)messageString withOk:(BOOL)ok{
+    [message setText:messageString];
+    if (ok==YES) {
+        [btnAction setHidden:YES];
+        [btnActionCancel setHidden:YES];
+        [shadow setEnabled:NO];
+        [btnOK setHidden:NO];
     }else{
-        return FALSE;
+        [btnAction setHidden:NO];
+        [btnActionCancel setHidden:NO];
+        [btnOK setHidden:YES];
+        [shadow setEnabled:YES];
     }
-    
 }
 -(IBAction)selectorBtn:(UIButton*)sender{
     switch (sender.tag) {
         case 0:
             [self.delegate selectDelete];
             break;
-            
         case 1:
             [self.delegate selectCancel];
+            break;
+        case 2:
+            [self.delegate selectOk];
             break;
         default:
             [self hide:YES];

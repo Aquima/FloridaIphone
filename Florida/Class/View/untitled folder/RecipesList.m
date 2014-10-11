@@ -14,7 +14,7 @@
     NSIndexPath *currentIndex;
     BOOL isFavorite;
 }
-
+@synthesize isFavorite;
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -113,7 +113,7 @@
 }
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    RecipesTableViewCell *cell =(RecipesTableViewCell*) [tableView cellForRowAtIndexPath:indexPath];
+   // RecipesTableViewCell *cell =(RecipesTableViewCell*) [tableView cellForRowAtIndexPath:indexPath];
     //[UIColor colorWithHexString:@"007dc3"];
     //[cell.viewDelete setBackgroundColor:[UIColor colorWithHexString:@"fe3a30"]];
   //--  [cell.viewDelete setBackgroundColor:[UIColor colorWithHexString:@"007dc3"]];

@@ -154,6 +154,7 @@
     [self.view addSubview:[AlertFlorida sharedInstance].menu];
     [[AlertFlorida sharedInstance] setDelegate:self];
     [[AlertFlorida sharedInstance] show:YES];
+     [[AlertFlorida sharedInstance] setMessageAlert:@"¿Estás seguro de eliminar de tu lista de favoritos?" withOk:NO];
 }
 #pragma mark - AlertFlorida
 -(void)selectCancel{
@@ -164,6 +165,9 @@
 -(void)selectDelete{
     [[AlertFlorida sharedInstance] hide:YES];
     [viewRecipesList deleteFavorite];
+}
+-(void)selectOk{
+    [[AlertFlorida sharedInstance] hide:YES];
 }
 #pragma mark - MenuViewDelegate
 -(void)selectShowfavorite{
