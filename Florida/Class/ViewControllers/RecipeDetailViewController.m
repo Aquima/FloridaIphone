@@ -34,6 +34,7 @@
     NSString*message;
     MBProgressHUD *progress;
     UIButton*btnCurrentFavorite;
+    UILabel*lblCurrentFavorite;
 
 }
 @end
@@ -282,17 +283,19 @@
         [LocalData grabarCambiosDeObjeto:recipe];
     }
 }
--(void)addFavorites:(id)sender{
+-(void)addFavorites:(id)sender withLabel:(id)label{
     BOOL isFavorite = [[recipe isFavorite] boolValue];
     if (isFavorite==NO) {
  
         btnCurrentFavorite=(UIButton*)sender;
+        lblCurrentFavorite=(UILabel*)label;
         [self.view addSubview:[AlertFlorida sharedInstance].menu];
         [[AlertFlorida sharedInstance] show:YES];
         [[AlertFlorida sharedInstance] setDelegate:self];
         [[AlertFlorida sharedInstance] setMessageAlert:@"La receta se agregó a favoritos." withOk:YES];
     }else{
         btnCurrentFavorite=(UIButton*)sender;
+           lblCurrentFavorite=(UILabel*)label;
          [self.view addSubview:[AlertFlorida sharedInstance].menu];
         [[AlertFlorida sharedInstance] show:YES];
         [[AlertFlorida sharedInstance] setDelegate:self];
@@ -436,6 +439,7 @@
 #pragma mark - AlertViewDelegate
 -(void)selectDelete{
     recipe.isFavorite=@0;
+    [lblCurrentFavorite setText:@"Favorito"];
     [LocalData grabarCambiosDeObjeto:recipe];
     [btnCurrentFavorite setImage:[UIImage imageNamed:@"menu3"] forState:UIControlStateNormal];
      [[AlertFlorida sharedInstance] hide:YES];
@@ -448,5 +452,6 @@
     [LocalData grabarCambiosDeObjeto:recipe];
     [btnCurrentFavorite setImage:[UIImage imageNamed:@"menu2B"] forState:UIControlStateNormal];
     [[AlertFlorida sharedInstance] hide:YES];
+    [lblCurrentFavorite setText:@"Quitar"];
 }
 @end

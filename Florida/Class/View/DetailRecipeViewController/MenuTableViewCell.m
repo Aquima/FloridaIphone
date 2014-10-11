@@ -24,8 +24,10 @@
     BOOL isFavorite = [[recipe isFavorite] boolValue];
     if (isFavorite==NO) {
         [(UIButton*)btnFavorite setImage:[UIImage imageNamed:@"menu3"] forState:UIControlStateNormal];
+        [self.addFavorite setText:@"Favorite"];
     }else{
         [(UIButton*)btnFavorite setImage:[UIImage imageNamed:@"menu2B"] forState:UIControlStateNormal];
+         [self.addFavorite setText:@"Quitar"];
     }
     [btnAddNote setColor:[UIColor colorWithHexString:@"007052"] forState:UIControlStateSelected];
     [btnAddNote setColor:[UIColor colorWithHexString:@"339933"] forState:UIControlStateNormal];
@@ -47,7 +49,7 @@
     [btnBuyList setColor:[UIColor colorWithHexString:@"007052"] forState:UIControlStateNormal];
 }
 -(IBAction)addFavorites:(UIButton*)sender{
-    [self.delegate addFavorites:sender];
+    [self.delegate addFavorites:sender withLabel:self.addFavorite];
 }
 -(IBAction)share:(UIButton*)sender{
     [self.delegate share];
