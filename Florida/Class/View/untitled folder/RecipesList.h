@@ -17,7 +17,9 @@
 }
 @property(nonatomic,weak)id<recipeListDelegate>delegate;
 @property BOOL isFavorite;
+@property BOOL isBuyList;
 -(void)initWithData:(NSArray*)recipes;
 -(void)reloadData;
 -(void)deleteFavorite;
+-(void)deleteBuyList;
 @end

@@ -74,9 +74,29 @@
         [viewRecipesList initWithData:recipeList];
         [viewRecipesList setIsFavorite:YES];
         [viewRecipesList reloadData];
+    }else if(self.isBuyList==YES){
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:
+                                  @"isBuyList == %d",1];
+        
+        // commented out old starting point :)
+        //[results addObjectsFromArray:[all filteredArrayUsingPredicate:predicate]];
+        
+        // create a descriptor
+        // this assumes that the results are Key-Value-accessible
+        NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"idCategory"
+                                                                     ascending:YES];
+        //
+        NSArray *results = [[[OriginData sharedInstance].listRecipesCD filteredArrayUsingPredicate:predicate]
+                            sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];
+        
+        recipeList=results;
+        [viewRecipesList initWithData:recipeList];
+        [viewRecipesList setIsFavorite:YES];
+        [viewRecipesList reloadData];
+       
     }else{
         [viewRecipesList initWithData:recipeList];
-         [viewRecipesList setIsFavorite:NO];
+        [viewRecipesList setIsFavorite:NO];
         [viewRecipesList reloadData];
     }
     
@@ -164,7 +184,12 @@
 }
 -(void)selectDelete{
     [[AlertFlorida sharedInstance] hide:YES];
-    [viewRecipesList deleteFavorite];
+    if (self.isFavorite==YES) {
+        [viewRecipesList deleteFavorite];
+    }else if(self.isBuyList==YES){
+        [viewRecipesList deleteBuyList];
+    }
+    
 }
 -(void)selectOk{
     [[AlertFlorida sharedInstance] hide:YES];
