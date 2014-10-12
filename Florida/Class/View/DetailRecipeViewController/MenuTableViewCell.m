@@ -24,7 +24,7 @@
     BOOL isFavorite = [[recipe isFavorite] boolValue];
     if (isFavorite==NO) {
         [(UIButton*)btnFavorite setImage:[UIImage imageNamed:@"menu3"] forState:UIControlStateNormal];
-        [self.addFavorite setText:@"Favorite"];
+        [self.addFavorite setText:@"Favorito"];
     }else{
         [(UIButton*)btnFavorite setImage:[UIImage imageNamed:@"menu2B"] forState:UIControlStateNormal];
          [self.addFavorite setText:@"Quitar"];
