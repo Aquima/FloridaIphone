@@ -367,7 +367,7 @@
                         sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];
     
     [controller setRecipeList:results];
-   // [controller setIsFavorite:YES];
+    [controller setIsBuyList:YES];
     [self.navigationController popToViewController:controller animated:YES];
 
 }

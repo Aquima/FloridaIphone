@@ -9,6 +9,7 @@
 #import "RecipesList.h"
 #import "RecipeCD.h"
 #import "RecipesTableViewCell.h"
+#import "LocalData.h"
 @implementation RecipesList{
     RecipeCD*currentRecipeCD;
     NSIndexPath *currentIndex;
@@ -32,9 +33,29 @@
     // Drawing code
 }
 */
+-(void)deleteBuyList{
+    [data removeObjectAtIndex:currentIndex.row];
+    [tblRecipes deleteRowsAtIndexPaths:@[currentIndex] withRowAnimation:UITableViewRowAnimationFade];
+    currentRecipeCD.isBuyList=@0;
+    NSMutableArray*ingredientesCompuesto=[[NSMutableArray alloc] init];
+    NSArray*ingredientes=(NSArray*)[NSKeyedUnarchiver unarchiveObjectWithData:currentRecipeCD.ingredients];
+    for (NSArray*ingrediente in ingredientes) {
+
+        NSArray*index=[[NSArray alloc] initWithObjects:[ingrediente objectAtIndex:0],@"0", nil];
+        if (![[ingrediente objectAtIndex:0] isEqualToString:@""]) {
+            [ingredientesCompuesto addObject:index];
+        }
+        
+    }
+    NSData *arrayData = [NSKeyedArchiver archivedDataWithRootObject:ingredientesCompuesto];
+    currentRecipeCD.ingredients=arrayData;
+    [LocalData grabarCambiosDeObjeto:currentRecipeCD];
+}
 -(void)deleteFavorite{
     [data removeObjectAtIndex:currentIndex.row];
     [tblRecipes deleteRowsAtIndexPaths:@[currentIndex] withRowAnimation:UITableViewRowAnimationFade];
+    currentRecipeCD.isFavorite=@0;
+    [LocalData grabarCambiosDeObjeto:currentRecipeCD];
 }
 -(void)initWithData:(NSArray*)recipes{
     data=[[NSMutableArray alloc] initWithArray:recipes];
@@ -121,7 +142,7 @@
     // set frames for all content you have got for that cell
     
     UITableViewCellEditingStyle style = UITableViewCellEditingStyleDelete;
-    if (self.isFavorite==YES) {
+    if (self.isFavorite==YES||self.isBuyList==YES) {
         return style;
     }else{
         return style=UITableViewCellEditingStyleNone;
