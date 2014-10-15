@@ -29,6 +29,7 @@
 		B40ED69119C343BA00A8796F /* RecipeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B40ED69019C343BA00A8796F /* RecipeDetailViewController.m */; };
 		B442541319D549FA00E74DBC /* MediaRecipes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B442541219D549FA00E74DBC /* MediaRecipes.xcassets */; };
 		B446555219D24EFD00DDE99D /* MediaHome.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B446555119D24EFD00DDE99D /* MediaHome.xcassets */; };
+		B447292019EDD6A600A7B313 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B447291F19EDD6A600A7B313 /* VideoViewController.m */; };
 		B453750719DC9D080036CFBD /* BuyListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B453750619DC9D080036CFBD /* BuyListView.m */; };
 		B453750B19DCA23C0036CFBD /* IngredientsCheckTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B453750919DCA23C0036CFBD /* IngredientsCheckTableViewCell.m */; };
 		B453750C19DCA23C0036CFBD /* IngredientsCheckTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B453750A19DCA23C0036CFBD /* IngredientsCheckTableViewCell.xib */; };
@@ -156,6 +157,8 @@
 		B40ED69019C343BA00A8796F /* RecipeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeDetailViewController.m; sourceTree = "<group>"; };
 		B442541219D549FA00E74DBC /* MediaRecipes.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MediaRecipes.xcassets; sourceTree = "<group>"; };
 		B446555119D24EFD00DDE99D /* MediaHome.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MediaHome.xcassets; sourceTree = "<group>"; };
+		B447291E19EDD6A600A7B313 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
+		B447291F19EDD6A600A7B313 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
 		B453750519DC9D080036CFBD /* BuyListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyListView.h; sourceTree = "<group>"; };
 		B453750619DC9D080036CFBD /* BuyListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyListView.m; sourceTree = "<group>"; };
 		B453750819DCA23C0036CFBD /* IngredientsCheckTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngredientsCheckTableViewCell.h; sourceTree = "<group>"; };
@@ -482,6 +485,8 @@
 				B406A2CF19C26E3C00772A3F /* RecipesViewController.m */,
 				B40ED68F19C343BA00A8796F /* RecipeDetailViewController.h */,
 				B40ED69019C343BA00A8796F /* RecipeDetailViewController.m */,
+				B447291E19EDD6A600A7B313 /* VideoViewController.h */,
+				B447291F19EDD6A600A7B313 /* VideoViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -863,6 +868,7 @@
 				B4A4A7F919BFDA5F005AA748 /* EZFormStandardInputAccessoryView.m in Sources */,
 				B406A2CA19C25B4100772A3F /* UIImage+WebP.m in Sources */,
 				B459462919C5095500677F29 /* GrayTextField.m in Sources */,
+				B447292019EDD6A600A7B313 /* VideoViewController.m in Sources */,
 				B4A4A7FD19BFDA5F005AA748 /* Reachability.m in Sources */,
 				B4A0D78919DE1A760001C411 /* SearchView.m in Sources */,
 				B4AFAADC19BE5DDA00CCC368 /* ViewController.m in Sources */,

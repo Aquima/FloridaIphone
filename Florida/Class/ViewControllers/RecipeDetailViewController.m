@@ -22,6 +22,7 @@
 #import "ShareView.h"
 #import "MBProgressHUD.h"
 #import "AlertFlorida.h"
+#import "VideoViewController.h"
 @import Social;
 @interface RecipeDetailViewController ()<MenuTableViewCellDelegate,MenuViewDelegate,NoteViewDelegate,BuyListViewDelegate,ShareViewDelegate,RecipeDetailTableViewCellDelegate,AlertFloridaDelegate>
 {
@@ -434,7 +435,13 @@
 }
 #pragma mark- RecipeDetailTableViewCellDelegate
 -(void)loadVideo{
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: recipe.urlVideo]];
+  //  [[UIApplication sharedApplication] openURL:[NSURL URLWithString: recipe.urlVideo]];
+    VideoViewController*viewController =
+    [[UIStoryboard storyboardWithName:@"Main"
+                               bundle:NULL] instantiateViewControllerWithIdentifier:@"videoVC"];
+    [viewController setUrlAddress:recipe.urlVideo];
+    [self.navigationController pushViewController:viewController animated:YES];
+
 }
 #pragma mark - AlertViewDelegate
 -(void)selectDelete{
