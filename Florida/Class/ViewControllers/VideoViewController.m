@@ -16,12 +16,14 @@
 
 
 @end
-
+@interface UIDevice (MyPrivateNameThatAppleWouldNeverUseGoesHere)
+- (void) setOrientation:(UIInterfaceOrientation)orientation;
+@end
 @implementation VideoViewController
 @synthesize urlAddress;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+      [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationLandscapeRight];
     [superTopView setBackgroundColor:[UIColor colorWithHexString:@"62bf40"]];
     [topView setBackgroundColor:[UIColor colorWithHexString:@"42a221"]];
     // Do any additional setup after loading the view.
@@ -36,12 +38,26 @@
     [webController loadRequest:requestObj];
 
 }
-
+- (BOOL)prefersStatusBarHidden {
+    return NO;
+}
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+     //[[UIDevice currentDevice] setOrientation:UIInterfaceOrientationLandscapeRight];
+}
+-(void)viewDidLayoutSubviews {
+    NSLog(@"%@", (self.view.frame.size.width == ([[UIScreen mainScreen] bounds].size.width*([[UIScreen mainScreen] bounds].size.width<[[UIScreen mainScreen] bounds].size.height))+([[UIScreen mainScreen] bounds].size.height*([[UIScreen mainScreen] bounds].size.width>[[UIScreen mainScreen] bounds].size.height))) ? @"Portrait" : @"Landscape");
+  //  [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationLandscapeLeft];
+}
+-(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
+    [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationLandscapeRight];
+}
 /*
 #pragma mark - Navigation
 
@@ -52,7 +68,7 @@
 }
 */
 - (IBAction)goBack:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:NO];
 }
 
 @end

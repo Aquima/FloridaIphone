@@ -173,6 +173,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Egn-aM-QUG"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="backgroundLogo" destination="kQu-Cy-Hy8" id="iHJ-CY-Uf2"/>
@@ -386,24 +387,24 @@
             <objects>
                 <viewController storyboardIdentifier="videoVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iXK-Pg-v8U" customClass="VideoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bbM-Fy-cYb">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondo_fondo" id="sst-vH-sDu">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="aOC-tC-JJB">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="21"/>
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" id="4AK-Rm-XJn">
-                                <rect key="frame" x="0.0" y="21" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="21" width="568" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="linea_degradado" id="4Z0-GF-59J">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="4"/>
+                                        <rect key="frame" x="0.0" y="46" width="568" height="4"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Buscar Receta" textAlignment="center" minimumFontSize="17" id="g7j-U0-nJv" customClass="SearchTextField">
@@ -413,7 +414,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_logo" id="96A-EZ-Gn4">
-                                        <rect key="frame" x="91" y="3" width="138" height="40"/>
+                                        <rect key="frame" x="215" y="3" width="138" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fjx-25-Hs9">
@@ -431,13 +432,14 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <webView contentMode="scaleToFill" id="TFu-0u-aG7">
-                                <rect key="frame" x="0.0" y="71" width="320" height="497"/>
+                                <rect key="frame" x="0.0" y="71" width="568" height="249"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="superTopView" destination="aOC-tC-JJB" id="FMz-lN-4IP"/>
                         <outlet property="topView" destination="4AK-Rm-XJn" id="XRw-vf-HHj"/>
@@ -446,7 +448,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijz-5d-0bf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1031" y="-918"/>
+            <point key="canvasLocation" x="1243" y="-918"/>
         </scene>
         <!--Recipe Detail View Controller-->
         <scene sceneID="5jt-eM-DyK">

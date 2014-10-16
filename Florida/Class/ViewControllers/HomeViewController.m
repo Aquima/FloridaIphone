@@ -25,7 +25,9 @@
 }
 
 @end
-
+@interface UIDevice (MyPrivateNameThatAppleWouldNeverUseGoesHere)
+- (void) setOrientation:(UIInterfaceOrientation)orientation;
+@end
 @implementation HomeViewController{
     NSArray*recipesCDList;
 }
@@ -42,7 +44,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if (    (self.view.frame.size.width == ([[UIScreen mainScreen] bounds].size.width*([[UIScreen mainScreen] bounds].size.width<[[UIScreen mainScreen] bounds].size.height))+([[UIScreen mainScreen] bounds].size.height*([[UIScreen mainScreen] bounds].size.width>[[UIScreen mainScreen] bounds].size.height)))) {
+        //portrait
+    }else{
+        //landscape
+        [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationPortrait];
+    }
+    //[[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait animated:NO];
     
+    [self shouldAutorotate];
     [self.view addSubview:[SearchView sharedInstance].menu];
     for (UILabel*label in listLabels) {
         [label setFont:[UIFont fontWithName:@"Roboto Medium" size:8.0f]];
@@ -63,15 +73,33 @@
     }else{
         [self consult];
     }
-
+    [UIViewController attemptRotationToDeviceOrientation];
     // Do any additional setup after loading the view.
 }
+
 - (BOOL)prefersStatusBarHidden {
     return NO;
+}
+-(void)viewWillAppear:(BOOL)animated{
+    //  [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationPortrait];
+    if (    (self.view.frame.size.width == ([[UIScreen mainScreen] bounds].size.width*([[UIScreen mainScreen] bounds].size.width<[[UIScreen mainScreen] bounds].size.height))+([[UIScreen mainScreen] bounds].size.height*([[UIScreen mainScreen] bounds].size.width>[[UIScreen mainScreen] bounds].size.height)))) {
+        //portrait
+    }else{
+        //landscape
+        [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationPortrait];
+    }
+}
+
+
+-(void)viewDidLayoutSubviews {
+    NSLog(@"%@", (self.view.frame.size.width == ([[UIScreen mainScreen] bounds].size.width*([[UIScreen mainScreen] bounds].size.width<[[UIScreen mainScreen] bounds].size.height))+([[UIScreen mainScreen] bounds].size.height*([[UIScreen mainScreen] bounds].size.width>[[UIScreen mainScreen] bounds].size.height))) ? @"Portrait" : @"Landscape");
+     [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationPortrait];
 }
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }
+
+
 -(void)consult{
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endRecipes:) name:@"endRecipes" object:nil];
     [[OriginData sharedInstance] invokeAsyncSyncRecipes:@"endRecipes"];

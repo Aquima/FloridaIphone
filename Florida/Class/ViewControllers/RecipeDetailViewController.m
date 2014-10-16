@@ -39,7 +39,9 @@
 
 }
 @end
-
+@interface UIDevice (MyPrivateNameThatAppleWouldNeverUseGoesHere)
+- (void) setOrientation:(UIInterfaceOrientation)orientation;
+@end
 @implementation RecipeDetailViewController
 @synthesize recipe;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -74,12 +76,29 @@
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }
+
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+  //  [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationPortrait];
+    if (    (self.view.frame.size.width == ([[UIScreen mainScreen] bounds].size.width*([[UIScreen mainScreen] bounds].size.width<[[UIScreen mainScreen] bounds].size.height))+([[UIScreen mainScreen] bounds].size.height*([[UIScreen mainScreen] bounds].size.width>[[UIScreen mainScreen] bounds].size.height)))) {
+        //portrait
+    }else{
+        //landscape
+        [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationPortrait];
+    }
+}
+-(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
+    [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationPortrait];
+}
 /*
 #pragma mark - Navigation
 
