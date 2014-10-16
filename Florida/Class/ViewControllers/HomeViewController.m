@@ -48,7 +48,7 @@
         //portrait
     }else{
         //landscape
-        [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationPortrait];
+      //  [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationPortrait];
     }
     //[[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait animated:NO];
     
@@ -76,7 +76,20 @@
     [UIViewController attemptRotationToDeviceOrientation];
     // Do any additional setup after loading the view.
 }
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
 
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return UIInterfaceOrientationIsPortrait(toInterfaceOrientation);
+}
 - (BOOL)prefersStatusBarHidden {
     return NO;
 }
@@ -86,14 +99,14 @@
         //portrait
     }else{
         //landscape
-        [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationPortrait];
+       // [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationPortrait];
     }
 }
 
 
 -(void)viewDidLayoutSubviews {
     NSLog(@"%@", (self.view.frame.size.width == ([[UIScreen mainScreen] bounds].size.width*([[UIScreen mainScreen] bounds].size.width<[[UIScreen mainScreen] bounds].size.height))+([[UIScreen mainScreen] bounds].size.height*([[UIScreen mainScreen] bounds].size.width>[[UIScreen mainScreen] bounds].size.height))) ? @"Portrait" : @"Landscape");
-     [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationPortrait];
+    // [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationPortrait];
 }
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
