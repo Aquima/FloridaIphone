@@ -55,23 +55,9 @@
     }else{
         [self consult];
     }
-    [UIViewController attemptRotationToDeviceOrientation];
-    // Do any additional setup after loading the view.
-}
-- (BOOL)shouldAutorotate
-{
-    return YES;
+	
 }
 
-- (NSUInteger)supportedInterfaceOrientations
-{
-    return UIInterfaceOrientationMaskPortrait;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
-{
-    return UIInterfaceOrientationIsPortrait(toInterfaceOrientation);
-}
 - (BOOL)prefersStatusBarHidden {
     return NO;
 }
@@ -254,8 +240,5 @@
 
 - (NSUInteger) supportedInterfaceOrientations { return UIInterfaceOrientationMaskPortrait; }
 - (BOOL) shouldAutorotate{ return NO;}
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
-{
-	return UIInterfaceOrientationPortrait;
-}
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation { return UIInterfaceOrientationPortrait; }
 @end
