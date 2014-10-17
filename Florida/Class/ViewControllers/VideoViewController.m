@@ -16,14 +16,12 @@
 
 
 @end
-@interface UIDevice (MyPrivateNameThatAppleWouldNeverUseGoesHere)
-- (void) setOrientation:(UIInterfaceOrientation)orientation;
-@end
+
 @implementation VideoViewController
 @synthesize urlAddress;
 - (void)viewDidLoad {
     [super viewDidLoad];
-      [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationLandscapeRight];
+
     [superTopView setBackgroundColor:[UIColor colorWithHexString:@"62bf40"]];
     [topView setBackgroundColor:[UIColor colorWithHexString:@"42a221"]];
     // Do any additional setup after loading the view.
@@ -44,31 +42,16 @@
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
--(void)viewWillAppear:(BOOL)animated{
-     //[[UIDevice currentDevice] setOrientation:UIInterfaceOrientationLandscapeRight];
-}
--(void)viewDidLayoutSubviews {
-    NSLog(@"%@", (self.view.frame.size.width == ([[UIScreen mainScreen] bounds].size.width*([[UIScreen mainScreen] bounds].size.width<[[UIScreen mainScreen] bounds].size.height))+([[UIScreen mainScreen] bounds].size.height*([[UIScreen mainScreen] bounds].size.width>[[UIScreen mainScreen] bounds].size.height))) ? @"Portrait" : @"Landscape");
-  //  [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationLandscapeLeft];
-}
--(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
-    [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationLandscapeRight];
-}
+
+
 /*
 #pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
 */
 - (IBAction)goBack:(id)sender {
-    [self.navigationController popViewControllerAnimated:NO];
+	[self dismissViewControllerAnimated: YES completion: nil];
 }
+
+- (BOOL) shouldAutorotate { return YES; }
+- (NSUInteger) supportedInterfaceOrientations { return UIInterfaceOrientationMaskLandscapeRight | UIInterfaceOrientationMaskLandscapeLeft; }
 
 @end

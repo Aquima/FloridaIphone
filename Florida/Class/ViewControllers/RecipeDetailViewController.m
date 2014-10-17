@@ -39,9 +39,6 @@
 
 }
 @end
-@interface UIDevice (MyPrivateNameThatAppleWouldNeverUseGoesHere)
-- (void) setOrientation:(UIInterfaceOrientation)orientation;
-@end
 @implementation RecipeDetailViewController
 @synthesize recipe;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -87,18 +84,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)viewWillAppear:(BOOL)animated{
-  //  [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationPortrait];
-    if (    (self.view.frame.size.width == ([[UIScreen mainScreen] bounds].size.width*([[UIScreen mainScreen] bounds].size.width<[[UIScreen mainScreen] bounds].size.height))+([[UIScreen mainScreen] bounds].size.height*([[UIScreen mainScreen] bounds].size.width>[[UIScreen mainScreen] bounds].size.height)))) {
-        //portrait
-    }else{
-        //landscape
-        [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationPortrait];
-    }
-}
--(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
-    [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationPortrait];
-}
+
 /*
 #pragma mark - Navigation
 
@@ -459,7 +445,8 @@
     [[UIStoryboard storyboardWithName:@"Main"
                                bundle:NULL] instantiateViewControllerWithIdentifier:@"videoVC"];
     [viewController setUrlAddress:recipe.urlVideo];
-    [self.navigationController pushViewController:viewController animated:YES];
+	[self presentViewController: viewController animated: YES completion: nil];
+//    [self.navigationController pushViewController:viewController animated:YES];
 
 }
 #pragma mark - AlertViewDelegate

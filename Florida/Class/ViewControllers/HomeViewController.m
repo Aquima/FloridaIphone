@@ -25,34 +25,16 @@
 }
 
 @end
-@interface UIDevice (MyPrivateNameThatAppleWouldNeverUseGoesHere)
-- (void) setOrientation:(UIInterfaceOrientation)orientation;
-@end
+
 @implementation HomeViewController{
     NSArray*recipesCDList;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (    (self.view.frame.size.width == ([[UIScreen mainScreen] bounds].size.width*([[UIScreen mainScreen] bounds].size.width<[[UIScreen mainScreen] bounds].size.height))+([[UIScreen mainScreen] bounds].size.height*([[UIScreen mainScreen] bounds].size.width>[[UIScreen mainScreen] bounds].size.height)))) {
-        //portrait
-    }else{
-        //landscape
-        [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationPortrait];
-    }
-    //[[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait animated:NO];
-    
-    [self shouldAutorotate];
+	
     [self.view addSubview:[SearchView sharedInstance].menu];
     for (UILabel*label in listLabels) {
         [label setFont:[UIFont fontWithName:@"Roboto Medium" size:8.0f]];
@@ -80,21 +62,7 @@
 - (BOOL)prefersStatusBarHidden {
     return NO;
 }
--(void)viewWillAppear:(BOOL)animated{
-    //  [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationPortrait];
-    if (    (self.view.frame.size.width == ([[UIScreen mainScreen] bounds].size.width*([[UIScreen mainScreen] bounds].size.width<[[UIScreen mainScreen] bounds].size.height))+([[UIScreen mainScreen] bounds].size.height*([[UIScreen mainScreen] bounds].size.width>[[UIScreen mainScreen] bounds].size.height)))) {
-        //portrait
-    }else{
-        //landscape
-        [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationPortrait];
-    }
-}
 
-
--(void)viewDidLayoutSubviews {
-    NSLog(@"%@", (self.view.frame.size.width == ([[UIScreen mainScreen] bounds].size.width*([[UIScreen mainScreen] bounds].size.width<[[UIScreen mainScreen] bounds].size.height))+([[UIScreen mainScreen] bounds].size.height*([[UIScreen mainScreen] bounds].size.width>[[UIScreen mainScreen] bounds].size.height))) ? @"Portrait" : @"Landscape");
-     [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationPortrait];
-}
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }
@@ -271,4 +239,10 @@
     [[MenuView sharedInstance] hide:YES];
 }
 
+- (NSUInteger) supportedInterfaceOrientations { return UIInterfaceOrientationMaskPortrait; }
+- (BOOL) shouldAutorotate{ return NO;}
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+	return UIInterfaceOrientationPortrait;
+}
 @end

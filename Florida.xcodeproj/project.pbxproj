@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D1A395019F0DA4900CD3EE6 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1A394F19F0DA4900CD3EE6 /* NavigationViewController.m */; };
 		B406A29819C257C800772A3F /* RecipesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B406A29719C257C800772A3F /* RecipesTableViewCell.m */; };
 		B406A29B19C257E600772A3F /* RecipesList.m in Sources */ = {isa = PBXBuildFile; fileRef = B406A29A19C257E600772A3F /* RecipesList.m */; };
 		B406A2BE19C25B4100772A3F /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B406A29E19C25B4100772A3F /* MKAnnotationView+WebCache.m */; };
@@ -83,13 +84,7 @@
 		B4AFAAD219BE5DDA00CCC368 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AFAAD119BE5DDA00CCC368 /* main.m */; };
 		B4AFAAD619BE5DDA00CCC368 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AFAAD519BE5DDA00CCC368 /* AppDelegate.m */; };
 		B4AFAAD919BE5DDA00CCC368 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4AFAAD719BE5DDA00CCC368 /* Main.storyboard */; };
-		B4AFAADC19BE5DDA00CCC368 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AFAADB19BE5DDA00CCC368 /* ViewController.m */; };
 		B4AFAADE19BE5DDA00CCC368 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4AFAADD19BE5DDA00CCC368 /* Images.xcassets */; };
-		B4AFAAE519BE5DDA00CCC368 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AFAAE419BE5DDA00CCC368 /* XCTest.framework */; };
-		B4AFAAE619BE5DDA00CCC368 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AFAAC519BE5DDA00CCC368 /* Foundation.framework */; };
-		B4AFAAE719BE5DDA00CCC368 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AFAAC919BE5DDA00CCC368 /* UIKit.framework */; };
-		B4AFAAEF19BE5DDA00CCC368 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B4AFAAED19BE5DDA00CCC368 /* InfoPlist.strings */; };
-		B4AFAAF119BE5DDA00CCC368 /* FloridaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AFAAF019BE5DDA00CCC368 /* FloridaTests.m */; };
 		B4B3171619D3EB8100B946BF /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B4B3170319D3EB8100B946BF /* Roboto-Medium.ttf */; };
 		B4E2D8B619C09B7500AB2B14 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E2D8B519C09B7500AB2B14 /* HomeViewController.m */; };
 		B4E2D8B919C0A6AB00AB2B14 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E2D8B819C0A6AB00AB2B14 /* Recipe.m */; };
@@ -103,17 +98,9 @@
 		B4E2D8DB19C20AF600AB2B14 /* MediaAllRecipes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4E2D8DA19C20AF600AB2B14 /* MediaAllRecipes.xcassets */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		B4AFAAE819BE5DDA00CCC368 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B4AFAABA19BE5DDA00CCC368 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B4AFAAC119BE5DDA00CCC368;
-			remoteInfo = Florida;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		1D1A394E19F0DA4900CD3EE6 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
+		1D1A394F19F0DA4900CD3EE6 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 		B406A29619C257C800772A3F /* RecipesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesTableViewCell.h; sourceTree = "<group>"; };
 		B406A29719C257C800772A3F /* RecipesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipesTableViewCell.m; sourceTree = "<group>"; };
 		B406A29919C257E600772A3F /* RecipesList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesList.h; sourceTree = "<group>"; };
@@ -260,14 +247,8 @@
 		B4AFAAD419BE5DDA00CCC368 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B4AFAAD519BE5DDA00CCC368 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B4AFAAD819BE5DDA00CCC368 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B4AFAADA19BE5DDA00CCC368 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B4AFAADB19BE5DDA00CCC368 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B4AFAADD19BE5DDA00CCC368 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		B4AFAAE319BE5DDA00CCC368 /* FloridaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FloridaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4AFAAE419BE5DDA00CCC368 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		B4AFAAEC19BE5DDA00CCC368 /* FloridaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FloridaTests-Info.plist"; sourceTree = "<group>"; };
-		B4AFAAEE19BE5DDA00CCC368 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B4AFAAF019BE5DDA00CCC368 /* FloridaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FloridaTests.m; sourceTree = "<group>"; };
 		B4B3170319D3EB8100B946BF /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		B4E2D8B419C09B7500AB2B14 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		B4E2D8B519C09B7500AB2B14 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
@@ -297,16 +278,6 @@
 				B4AFAAC819BE5DDA00CCC368 /* CoreGraphics.framework in Frameworks */,
 				B4AFAACA19BE5DDA00CCC368 /* UIKit.framework in Frameworks */,
 				B4AFAAC619BE5DDA00CCC368 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B4AFAAE019BE5DDA00CCC368 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B4AFAAE519BE5DDA00CCC368 /* XCTest.framework in Frameworks */,
-				B4AFAAE719BE5DDA00CCC368 /* UIKit.framework in Frameworks */,
-				B4AFAAE619BE5DDA00CCC368 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +458,8 @@
 				B40ED69019C343BA00A8796F /* RecipeDetailViewController.m */,
 				B447291E19EDD6A600A7B313 /* VideoViewController.h */,
 				B447291F19EDD6A600A7B313 /* VideoViewController.m */,
+				1D1A394E19F0DA4900CD3EE6 /* NavigationViewController.h */,
+				1D1A394F19F0DA4900CD3EE6 /* NavigationViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -600,7 +573,6 @@
 			isa = PBXGroup;
 			children = (
 				B4AFAACB19BE5DDA00CCC368 /* Florida */,
-				B4AFAAEA19BE5DDA00CCC368 /* FloridaTests */,
 				B4AFAAC419BE5DDA00CCC368 /* Frameworks */,
 				B4AFAAC319BE5DDA00CCC368 /* Products */,
 			);
@@ -610,7 +582,6 @@
 			isa = PBXGroup;
 			children = (
 				B4AFAAC219BE5DDA00CCC368 /* Florida.app */,
-				B4AFAAE319BE5DDA00CCC368 /* FloridaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -634,8 +605,6 @@
 				B4AFAAD419BE5DDA00CCC368 /* AppDelegate.h */,
 				B4AFAAD519BE5DDA00CCC368 /* AppDelegate.m */,
 				B4AFAAD719BE5DDA00CCC368 /* Main.storyboard */,
-				B4AFAADA19BE5DDA00CCC368 /* ViewController.h */,
-				B4AFAADB19BE5DDA00CCC368 /* ViewController.m */,
 				B4AFAADD19BE5DDA00CCC368 /* Images.xcassets */,
 				B4AFAACC19BE5DDA00CCC368 /* Supporting Files */,
 			);
@@ -649,24 +618,6 @@
 				B4AFAACE19BE5DDA00CCC368 /* InfoPlist.strings */,
 				B4AFAAD119BE5DDA00CCC368 /* main.m */,
 				B4AFAAD319BE5DDA00CCC368 /* Florida-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		B4AFAAEA19BE5DDA00CCC368 /* FloridaTests */ = {
-			isa = PBXGroup;
-			children = (
-				B4AFAAF019BE5DDA00CCC368 /* FloridaTests.m */,
-				B4AFAAEB19BE5DDA00CCC368 /* Supporting Files */,
-			);
-			path = FloridaTests;
-			sourceTree = "<group>";
-		};
-		B4AFAAEB19BE5DDA00CCC368 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				B4AFAAEC19BE5DDA00CCC368 /* FloridaTests-Info.plist */,
-				B4AFAAED19BE5DDA00CCC368 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -739,24 +690,6 @@
 			productReference = B4AFAAC219BE5DDA00CCC368 /* Florida.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B4AFAAE219BE5DDA00CCC368 /* FloridaTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B4AFAAF719BE5DDA00CCC368 /* Build configuration list for PBXNativeTarget "FloridaTests" */;
-			buildPhases = (
-				B4AFAADF19BE5DDA00CCC368 /* Sources */,
-				B4AFAAE019BE5DDA00CCC368 /* Frameworks */,
-				B4AFAAE119BE5DDA00CCC368 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B4AFAAE919BE5DDA00CCC368 /* PBXTargetDependency */,
-			);
-			name = FloridaTests;
-			productName = FloridaTests;
-			productReference = B4AFAAE319BE5DDA00CCC368 /* FloridaTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -768,10 +701,6 @@
 				TargetAttributes = {
 					B4AFAAC119BE5DDA00CCC368 = {
 						DevelopmentTeam = V44H323E4G;
-					};
-					B4AFAAE219BE5DDA00CCC368 = {
-						DevelopmentTeam = V44H323E4G;
-						TestTargetID = B4AFAAC119BE5DDA00CCC368;
 					};
 				};
 			};
@@ -789,7 +718,6 @@
 			projectRoot = "";
 			targets = (
 				B4AFAAC119BE5DDA00CCC368 /* Florida */,
-				B4AFAAE219BE5DDA00CCC368 /* FloridaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -813,14 +741,6 @@
 				B4AFAAD019BE5DDA00CCC368 /* InfoPlist.strings in Resources */,
 				B459463219C51E0200677F29 /* Lora-Bold.ttf in Resources */,
 				B4AFAAD919BE5DDA00CCC368 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B4AFAAE119BE5DDA00CCC368 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B4AFAAEF19BE5DDA00CCC368 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -872,10 +792,10 @@
 				B447292019EDD6A600A7B313 /* VideoViewController.m in Sources */,
 				B4A4A7FD19BFDA5F005AA748 /* Reachability.m in Sources */,
 				B4A0D78919DE1A760001C411 /* SearchView.m in Sources */,
-				B4AFAADC19BE5DDA00CCC368 /* ViewController.m in Sources */,
 				B4E2D8B619C09B7500AB2B14 /* HomeViewController.m in Sources */,
 				B4E2D8D219C1456300AB2B14 /* LocalData.m in Sources */,
 				B40ED69119C343BA00A8796F /* RecipeDetailViewController.m in Sources */,
+				1D1A395019F0DA4900CD3EE6 /* NavigationViewController.m in Sources */,
 				B406A29B19C257E600772A3F /* RecipesList.m in Sources */,
 				B49BE42919D623B400E2FC34 /* CategoryCD.m in Sources */,
 				B4A4A7F619BFDA5F005AA748 /* EZFormMultiRadioFormField.m in Sources */,
@@ -906,23 +826,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B4AFAADF19BE5DDA00CCC368 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B4AFAAF119BE5DDA00CCC368 /* FloridaTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B4AFAAE919BE5DDA00CCC368 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B4AFAAC119BE5DDA00CCC368 /* Florida */;
-			targetProxy = B4AFAAE819BE5DDA00CCC368 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B4AFAACE19BE5DDA00CCC368 /* InfoPlist.strings */ = {
@@ -939,14 +843,6 @@
 				B4AFAAD819BE5DDA00CCC368 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B4AFAAED19BE5DDA00CCC368 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B4AFAAEE19BE5DDA00CCC368 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1038,7 +934,7 @@
 				INFOPLIST_FILE = "Florida/Florida-Info.plist";
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "174bd6a4-f346-484f-bc99-564a01db4165";
+				PROVISIONING_PROFILE = "ef752df8-ea90-4e87-bb9d-63634e3541f7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1058,48 +954,8 @@
 				INFOPLIST_FILE = "Florida/Florida-Info.plist";
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "174bd6a4-f346-484f-bc99-564a01db4165";
+				PROVISIONING_PROFILE = "ef752df8-ea90-4e87-bb9d-63634e3541f7";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		B4AFAAF819BE5DDA00CCC368 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Florida.app/Florida";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Florida/Florida-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "FloridaTests/FloridaTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		B4AFAAF919BE5DDA00CCC368 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Florida.app/Florida";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Florida/Florida-Prefix.pch";
-				INFOPLIST_FILE = "FloridaTests/FloridaTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -1120,15 +976,6 @@
 			buildConfigurations = (
 				B4AFAAF519BE5DDA00CCC368 /* Debug */,
 				B4AFAAF619BE5DDA00CCC368 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B4AFAAF719BE5DDA00CCC368 /* Build configuration list for PBXNativeTarget "FloridaTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B4AFAAF819BE5DDA00CCC368 /* Debug */,
-				B4AFAAF919BE5DDA00CCC368 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

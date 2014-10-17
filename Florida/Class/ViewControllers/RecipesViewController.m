@@ -23,9 +23,7 @@
      MBProgressHUD *progress;
 }
 @end
-@interface UIDevice (MyPrivateNameThatAppleWouldNeverUseGoesHere)
-- (void) setOrientation:(UIInterfaceOrientation)orientation;
-@end
+
 @implementation RecipesViewController
 @synthesize recipeList;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -57,13 +55,7 @@
     self.navigationController.interactivePopGestureRecognizer.delegate = self;
 }
 -(void)viewWillAppear:(BOOL)animated{
-  //  [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationPortrait];
-    if (    (self.view.frame.size.width == ([[UIScreen mainScreen] bounds].size.width*([[UIScreen mainScreen] bounds].size.width<[[UIScreen mainScreen] bounds].size.height))+([[UIScreen mainScreen] bounds].size.height*([[UIScreen mainScreen] bounds].size.width>[[UIScreen mainScreen] bounds].size.height)))) {
-        //portrait
-    }else{
-        //landscape
-        [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationPortrait];
-    }
+
 
     if (self.isFavorite==YES) {
         NSPredicate *predicate = [NSPredicate predicateWithFormat:
@@ -127,9 +119,6 @@
     return UIStatusBarStyleLightContent;
 }
 
--(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
-    [[UIDevice currentDevice] setOrientation:UIInterfaceOrientationPortrait];
-}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
