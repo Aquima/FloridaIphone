@@ -58,7 +58,20 @@
     [UIViewController attemptRotationToDeviceOrientation];
     // Do any additional setup after loading the view.
 }
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
 
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return UIInterfaceOrientationIsPortrait(toInterfaceOrientation);
+}
 - (BOOL)prefersStatusBarHidden {
     return NO;
 }
