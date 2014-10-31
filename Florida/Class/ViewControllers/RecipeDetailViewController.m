@@ -23,8 +23,9 @@
 #import "MBProgressHUD.h"
 #import "AlertFlorida.h"
 #import "VideoViewController.h"
+#import "PurchaseList.h"
 @import Social;
-@interface RecipeDetailViewController ()<MenuTableViewCellDelegate,MenuViewDelegate,NoteViewDelegate,BuyListViewDelegate,ShareViewDelegate,RecipeDetailTableViewCellDelegate,AlertFloridaDelegate>
+@interface RecipeDetailViewController ()<MenuTableViewCellDelegate,MenuViewDelegate,NoteViewDelegate,BuyListViewDelegate,ShareViewDelegate,RecipeDetailTableViewCellDelegate,AlertFloridaDelegate,PurchaseListDelegate>
 {
     
  
@@ -278,11 +279,6 @@
      [[BuyListView sharedInstance] show:YES];
      ingredients=(NSArray*)[NSKeyedUnarchiver unarchiveObjectWithData:recipe.ingredients];
     [[BuyListView sharedInstance] initWithData:ingredients];
-    BOOL isBuyList = [[recipe isBuyList] boolValue];
-    if (isBuyList==NO) {
-        recipe.isBuyList=@1;
-        [LocalData grabarCambiosDeObjeto:recipe];
-    }
 }
 -(void)addFavorites:(id)sender withLabel:(id)label{
     BOOL isFavorite = [[recipe isFavorite] boolValue];
@@ -351,7 +347,7 @@
 -(void)selectShowBuyList{
     [[MenuView sharedInstance] hide:YES];
     [[MenuView sharedInstance] setDelegate:self];
-    RecipesViewController*controller=[self.navigationController.viewControllers objectAtIndex:1];
+  //  RecipesViewController*controller=[self.navigationController.viewControllers objectAtIndex:1];
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:
                               @"isBuyList == %d",1];
@@ -366,10 +362,16 @@
     //
     NSArray *results = [[[OriginData sharedInstance].listRecipesCD filteredArrayUsingPredicate:predicate]
                         sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];
+    RecipeCD*currentRecipeNew=(RecipeCD*)[results lastObject];
+  //  [controller setRecipeList:results];
+   // [controller setIsBuyList:YES];
+   // [self.navigationController popToViewController:controller animated:YES];
     
-    [controller setRecipeList:results];
-    [controller setIsBuyList:YES];
-    [self.navigationController popToViewController:controller animated:YES];
+    [self.view addSubview:[PurchaseList sharedInstance].menu];
+    [[PurchaseList sharedInstance] setDelegate:self];
+    [[PurchaseList sharedInstance] show:YES];
+    ingredients=(NSArray*)[NSKeyedUnarchiver unarchiveObjectWithData:currentRecipeNew.ingredients];
+    [[PurchaseList sharedInstance] initWithData:ingredients];
 
 }
 -(void)selectShowRecipesPrepareted{
@@ -400,7 +402,49 @@
     [[BuyListView sharedInstance] hide:YES];
     NSData *arrayData = [NSKeyedArchiver archivedDataWithRootObject:newData];
     recipe.ingredients=arrayData;
-    [LocalData grabarCambiosDeObjeto:recipe];
+ //   [LocalData grabarCambiosDeObjeto:recipe];
+    
+    BOOL isBuyList = [[recipe isBuyList] boolValue];
+    if (isBuyList==NO) {
+        //borramos cualquier receta agregada
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:
+                                  @"isBuyList == %d",1];
+        
+        // commented out old starting point :)
+        //[results addObjectsFromArray:[all filteredArrayUsingPredicate:predicate]];
+        
+        // create a descriptor
+        // this assumes that the results are Key-Value-accessible
+        NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"idCategory"
+                                                                     ascending:YES];
+        //
+        NSArray *results = [[[OriginData sharedInstance].listRecipesCD filteredArrayUsingPredicate:predicate]
+                            sortedArrayUsingDescriptors:[NSArray arrayWithObject:descriptor]];
+        for (RecipeCD*recipeResult in results) {
+            recipeResult.isBuyList=@0;
+            NSMutableArray*ingredientesCompuesto=[[NSMutableArray alloc] init];
+            NSArray*ingredientes=(NSArray*)[NSKeyedUnarchiver unarchiveObjectWithData:recipeResult.ingredients];
+            int indexIngredient=0;
+            for (NSArray*ingrediente in ingredientes) {
+                 NSString*strIndex=[NSString stringWithFormat:@"%d",indexIngredient];
+                NSArray*index=[[NSArray alloc] initWithObjects:[ingrediente objectAtIndex:0],@"0",strIndex, nil];
+                if (![[ingrediente objectAtIndex:0] isEqualToString:@""]) {
+                    [ingredientesCompuesto addObject:index];
+                    indexIngredient++;
+                }
+                
+            }
+            NSData *arrayData = [NSKeyedArchiver archivedDataWithRootObject:ingredientesCompuesto];
+            recipeResult.ingredients=arrayData;
+            [LocalData grabarCambiosDeObjeto:recipeResult];
+        }
+        
+        
+        //teerminamos de borra las receta y agregamos esta ultima
+        recipe.isBuyList=@1;
+        [LocalData grabarCambiosDeObjeto:recipe];
+    }
+
 
 }
 -(void)selectBuyCancel{
@@ -462,4 +506,10 @@
     [[AlertFlorida sharedInstance] hide:YES];
     [lblCurrentFavorite setText:@"Quitar"];
 }
+#pragma mark - PurchaseViewDelegate
+-(void)selectPurchaseAccept:(NSArray *)newData{
+    
+}
+-(void)selectPurchaseCancel{
+    [[PurchaseList sharedInstance] hide:YES];}
 @end

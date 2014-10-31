@@ -49,10 +49,10 @@
         [btnAction setTag:i];
         if (i==0) {
             btnAction.frame=CGRectMake(0,4, 135, 50);
-            [btnAction setImage:[UIImage imageNamed:@"twitter_zOna"] forState:UIControlStateNormal];
+            [btnAction setImage:[UIImage imageNamed:@"twitter"] forState:UIControlStateNormal];
         }else{
              btnAction.frame=CGRectMake(135,4, 135, 50);
-             [btnAction setImage:[UIImage imageNamed:@"facebook_zOna"] forState:UIControlStateNormal];
+             [btnAction setImage:[UIImage imageNamed:@"facebook"] forState:UIControlStateNormal];
         }
        // [btnAction setTitle:[options objectAtIndex:i]  forState:UIControlStateNormal];
         [btnAction.titleLabel setFont:[UIFont fontWithName:@"Roboto-Medium" size:12.f]];

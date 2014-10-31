@@ -1,28 +1,28 @@
 //
-//  BuyListView.m
+//  PurchaseList.m
 //  Florida
 //
-//  Created by Raul Quispe on 10/1/14.
+//  Created by Raul Quispe on 10/20/14.
 //  Copyright (c) 2014 kodebinario. All rights reserved.
 //
 
-#import "BuyListView.h"
+#import "PurchaseList.h"
 #import "IngredientsCheckTableViewCell.h"
-@interface BuyListView()<IngredientsCheckTableViewCellDelegate>
+@interface PurchaseList()<IngredientsCheckTableViewCellDelegate>
 @end
-@implementation BuyListView{
+@implementation PurchaseList{
     UITextView*note;
     NSMutableArray*data;
     UITableView*tblRecipes;
-
+    
 }
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 @synthesize menu;
 /*
@@ -32,12 +32,12 @@
  // Drawing code
  }
  */
-+(BuyListView *)sharedInstance {
++(PurchaseList *)sharedInstance {
     static dispatch_once_t pred;
-    static BuyListView *shared = nil;
+    static PurchaseList *shared = nil;
     
     dispatch_once(&pred, ^{
-        shared = [[BuyListView alloc] init];
+        shared = [[PurchaseList alloc] init];
     });
     return shared;
 }
@@ -58,7 +58,7 @@
     CGSize screenSize = screenBound.size;
     CGFloat screenHeight = screenSize.height;
     if( screenHeight==568 ){
-   
+        
         NSLog(@"Iphone5");
         contentOptions=[[UIView alloc] initWithFrame:CGRectMake(18, 84, 284, 400)];
     }
@@ -85,7 +85,7 @@
     [message setLineBreakMode:NSLineBreakByWordWrapping];
     [message setTextAlignment:NSTextAlignmentLeft];
     [message setNumberOfLines:3];
-    [message setText:@"Elige los ingredientes para agregarlos a tu lista de compras"];
+    [message setText:@"Elige los ingredientes y selecciona la opción “Ya lo tengo” para eliminarlo de tu lista de compras"];
     [greenView addSubview:message];
     //
     [contentOptions addSubview:greenView];
@@ -99,7 +99,7 @@
     UIButton*btnAction=[[UIButton alloc] initWithFrame:CGRectMake(142, 358, 142, 49)];
     [btnAction setBackgroundColor:[UIColor colorWithHexString:@"339933"]];
     [btnAction setTag:0];
-    [btnAction setTitle:@"Aceptar"  forState:UIControlStateNormal];
+    [btnAction setTitle:@"Ya lo tengo"  forState:UIControlStateNormal];
     [btnAction.titleLabel setFont:[UIFont fontWithName:@"Roboto-Medium" size:12.f]];
     [btnAction setTitleColor:[UIColor colorWithHexString:@"ffffff"] forState:UIControlStateNormal];
     [btnAction addTarget:self action:@selector(selectorBtn:) forControlEvents:UIControlEventTouchUpInside];
@@ -128,11 +128,11 @@
     [note resignFirstResponder];
     switch (sender.tag) {
         case 0:
-            [self.delegate selectBuyAccept:data];
+            [self.delegate selectPurchaseAccept:data];
             break;
             
         case 1:
-            [self.delegate selectBuyCancel];
+            [self.delegate selectPurchaseCancel];
             break;
             
         default:
@@ -162,10 +162,10 @@
     NSArray*values=(NSArray*)[data objectAtIndex:indexPath.row];
     if ([(NSString*)[values objectAtIndex:1] isEqualToString:@"0"]) {
         [cell.btnCheck setTag:0];
-        [cell.btnCheck setImage:[UIImage imageNamed:@"checkOf"] forState:UIControlStateNormal];
+        [cell.btnCheck setImage:[UIImage imageNamed:@"checkOn"] forState:UIControlStateNormal];
     }else{
         [cell.btnCheck setTag:1];
-        [cell.btnCheck setImage:[UIImage imageNamed:@"checkOn"] forState:UIControlStateNormal];
+        [cell.btnCheck setImage:[UIImage imageNamed:@"checkOf"] forState:UIControlStateNormal];
     }
     [cell.lblTitle setFont:[UIFont fontWithName:@"Roboto-Medium" size:9.f]];
     [cell.lblTitle setText:(NSString*)[values objectAtIndex:0]];
@@ -189,7 +189,7 @@
  {
  // Drawing code
  }
-*/
+ */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     //    UIAlertView*alert=[[UIAlertView alloc] initWithTitle:@"title" message:@"mesage" delegate:self cancelButtonTitle:@"Aceptar" otherButtonTitles: nil];
     //    [alert show];

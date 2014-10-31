@@ -96,6 +96,7 @@
 		B4E2D8D619C1E9A700AB2B14 /* Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E2D8D519C1E9A700AB2B14 /* Categories.m */; };
 		B4E2D8D919C1EA2300AB2B14 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E2D8D819C1EA2300AB2B14 /* CategoryCell.m */; };
 		B4E2D8DB19C20AF600AB2B14 /* MediaAllRecipes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4E2D8DA19C20AF600AB2B14 /* MediaAllRecipes.xcassets */; };
+		B4F49F0119F5466200AB124D /* PurchaseList.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F49F0019F5466200AB124D /* PurchaseList.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -268,6 +269,8 @@
 		B4E2D8D719C1EA2300AB2B14 /* CategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCell.h; sourceTree = "<group>"; };
 		B4E2D8D819C1EA2300AB2B14 /* CategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCell.m; sourceTree = "<group>"; };
 		B4E2D8DA19C20AF600AB2B14 /* MediaAllRecipes.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MediaAllRecipes.xcassets; sourceTree = "<group>"; };
+		B4F49EFF19F5466200AB124D /* PurchaseList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseList.h; sourceTree = "<group>"; };
+		B4F49F0019F5466200AB124D /* PurchaseList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseList.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -363,6 +366,8 @@
 				B4A0D78819DE1A760001C411 /* SearchView.m */,
 				B45ED9F519DF032E00D990A3 /* ShareView.h */,
 				B45ED9F619DF032E00D990A3 /* ShareView.m */,
+				B4F49EFF19F5466200AB124D /* PurchaseList.h */,
+				B4F49F0019F5466200AB124D /* PurchaseList.m */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -812,6 +817,7 @@
 				B4A4A7F719BFDA5F005AA748 /* EZFormRadioChoiceViewController.m in Sources */,
 				B4A4A81719BFDD15005AA748 /* WSQuery.m in Sources */,
 				B459462B19C5095500677F29 /* SearchTextField.m in Sources */,
+				B4F49F0119F5466200AB124D /* PurchaseList.m in Sources */,
 				B49BE42C19D623B400E2FC34 /* RecipeCD.m in Sources */,
 				B406A2BE19C25B4100772A3F /* MKAnnotationView+WebCache.m in Sources */,
 				B4AFAAD619BE5DDA00CCC368 /* AppDelegate.m in Sources */,

@@ -73,7 +73,9 @@
         NSArray*ingredients=(NSArray*)[response objectForKey:@"ingredients"];
        
        NSMutableArray*ingredientesCompuesto=[[NSMutableArray alloc] init];
+        int indexIngredient=0;
         for (NSString*ingrediente in ingredients) {
+            NSString*strIndex=[NSString stringWithFormat:@"%d",indexIngredient];
             NSString*ingredients =[ingrediente stringByReplacingOccurrencesOfString:@"&uacute;" withString:@"ú"];
             ingredients =[ingredients stringByReplacingOccurrencesOfString:@"&aacute;" withString:@"á"];
             ingredients =[ingredients stringByReplacingOccurrencesOfString:@"&oacute;" withString:@"ó"];
@@ -88,10 +90,10 @@
             ingredients=[ingredients stringByReplacingOccurrencesOfString:@"&frac18;" withString:@"⅛"];
             ingredients=[ingredients stringByReplacingOccurrencesOfString:@"&ordm;" withString:@"º"];
 
-            
-            NSArray*index=[[NSArray alloc] initWithObjects:ingredients,@"0", nil];
+            NSArray*index=[[NSArray alloc] initWithObjects:ingredients,@"1",strIndex, nil];
             if (![ingredients isEqualToString:@""]) {
                  [ingredientesCompuesto addObject:index];
+                indexIngredient++;
             }
            
         }

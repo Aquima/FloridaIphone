@@ -13,6 +13,7 @@
 #import "RecipesViewController.h"
 #import "SearchView.h"
 #import "MenuView.h"
+#import "PurchaseList.h"
 @interface HomeViewController ()<categoriesDelegate,UITextFieldDelegate,SearchViewDelegate,MenuViewDelegate>{
     __weak IBOutlet Categories *viewCategories;
     __weak IBOutlet UITextField *itxtSearch;
@@ -228,7 +229,8 @@
     
     [viewController setRecipeList:results];
    // [viewController setIsFavorite:YES];
-    [self.navigationController pushViewController:viewController animated:YES];
+    [self.view addSubview:[PurchaseList sharedInstance].menu];
+  //  [self.navigationController pushViewController:viewController animated:YES];
 
 }
 -(void)selectShowRecipesPrepareted{
